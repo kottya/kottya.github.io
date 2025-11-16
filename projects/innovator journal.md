@@ -43,7 +43,9 @@ Since the Arduino only outputs the voltage, my partner and I created the followi
 
 **3. Assembling the group 2 materials** 
 
-We connected the stepper motors with the Arduino board using the Arduino sheild
+We connected the stepper motors with the Arduino board using the Arduino sheild;
 
+<img src="arduino-closeup.png" width="300"> 
+<img src="motor-assemble.png" width="300"> 
 
 
