@@ -5,6 +5,7 @@
 ### Journal No.01
 Question: 
 Materials:
+group 1:
 - breadboard
 - Arduino
 - wires
@@ -12,8 +13,17 @@ Materials:
 - computer (Macbook Air)
 - Adapter
 
+group 2:
+- stepper mortor
+- Arduino sheild
+- wires
+
 Process:
 1. Assembling
+Setting up the group 1 materials listed above
 
-2. coding
-3. Callibrating
+![assembling](innovator-journal-assembling.heic)
+
+3. coding
+We used 
+4. Callibrating
