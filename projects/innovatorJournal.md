@@ -64,9 +64,13 @@ We connected the stepper motors with the Arduino board using the Arduino sheild;
 
 ---------------------------------------------------------------------------------------------------------
 
-### Progress/ problems
+### Progress & problems
 
-Thanks to my partner, Kaylee Zhu, and Mr. Raus, our group has been making constant progress on this project. We have assembled the Arduino with the scanner and the motor, and we have generated the code to convert the voltage measurement ooutput as real-world distance. Our next step will be confirming that the generated code works, and assembling harwares with the stepper motor to make it rotate so it can scan. 
+Thanks to my partner, Kaylee Zhu, and Mr. Raus, our group has been making constant progress on this project. We have assembled the Arduino with the scanner and the motor, and we have generated the code to convert the voltage measurement ooutput as real-world distance. Our next step will be assembling hardwares with the stepper motor to make it rotate so it can scan.
+
+Our main struggle was writing the code that allows us to convert the voltage output from the sensor to distance measurements. Since both myself and my partner do not have experience in coding, we ended up relying on WebbGPT to generate the code itself. We haven't comfirmed that the code works, so our next goal is to check the code and adjust if need.
+
+I have had personal skill and emotinal struggles during the process, which I will write about in the emotinal journey section below.
 
 -------------------------------------------------------------------------------------------------------------
 
@@ -81,6 +85,12 @@ Since this is my first time doing projects like this, I have learned a lot from 
 
 ----------------------------------------------------------------------------------------------------------
 ### Emotional journey
+
+Questions:
+
+- How did you feel?
+- How did these feelings change as you encountered challenges and made progress?
+- How do these feelings relate to your journey of discovery?
 
 I have personally struggling a lot with this project, since this is my first time working with hardwares and softwares. To be honest, this is the most lost I have ever felt in any class, I'm feeling very confused most of the time in class and stuggling to catch up with the other talented and knowledgeable classmates. I think the reason behind this is because of lack of basic knowledge and experience of robotics, machinery, and coding. 
 
