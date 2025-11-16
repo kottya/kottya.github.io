@@ -19,11 +19,16 @@ group 2:
 - wires
 
 Process:
+Class 1
 1. Assembling
-Setting up the group 1 materials listed above
 
-![assembling](innovator-journal-assembling.heic)
+Setting up the group 1 materials listed above;
 
-3. coding
-We used 
-4. Callibrating
+<img src="innovator-journal-assembling.png" width="300">
+
+2. coding
+
+We used the sample code on the [Arduino Website](https://docs.arduino.cc/language-reference/en/functions/analog-io/analogRead/) to get the output from the sensor as numbers on the computer;
+
+
+3. Callibrating
