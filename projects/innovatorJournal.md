@@ -29,7 +29,7 @@ group 2:
 
 Setting up the group 1 materials listed above;
 
-<img src="innovator-journal-assembling.png" width="300">
+<img src="innovator-journal-assembling.png" width="500">
 
 ----------------------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ We used the sample code on the [Arduino Website](https://docs.arduino.cc/languag
 
 As it is shown in the chart below, this sensor outputs different voltage depending on the distance;
 
-<img src="sharp-chart.png" width="400"> 
+<img src="sharp-chart.png" width="600"> 
 
 *please refer [this pdf](https://global.sharp/products/device/lineup/data/pdf/datasheet/gp2y0a21yk_e.pdf) provided by Sharp for details.
 
@@ -51,7 +51,7 @@ My partner and I created the following power law regression equation using a cha
 *Because the chart exhibits two possible distance values for the same voltage below 10 cm, distances under 10 cm are excluded from the analysis.
 
 <img src="chart.png" width="500"> 
-<img src="chart-code.png" width="400">
+<img src="chart-code.png" width="500">
 
 -----------------------------------------------------------------------------------------
 
@@ -59,8 +59,8 @@ My partner and I created the following power law regression equation using a cha
 
 We connected the stepper motors with the Arduino board using the Arduino sheild;
 
-<img src="arduino-closeup.png" width="400"> 
-<img src="motor-assemble.png" width="400"> 
+<img src="arduino-closeup.png" width="600"> 
+<img src="motor-assemble.png" width="600"> 
 
 ---------------------------------------------------------------------------------------------------------
 
