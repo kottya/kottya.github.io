@@ -3,8 +3,11 @@
 ## 3D scanner project
 
 ### Journal No.01
-Question: 
-Materials:
+#### Question: 
+
+
+#### Materials:
+
 group 1:
 - breadboard
 - Arduino
@@ -18,17 +21,22 @@ group 2:
 - Arduino sheild
 - wires
 
-Process:
+#### Process:
+
 Class 1
+
 1. Assembling
 
 Setting up the group 1 materials listed above;
 
 <img src="innovator-journal-assembling.png" width="300">
 
-2. coding
+2. Coding 
 
 We used the sample code on the [Arduino Website](https://docs.arduino.cc/language-reference/en/functions/analog-io/analogRead/) to get the output from the sensor as numbers on the computer;
+<img src="chart.png" width="300">
+
+Since the Arduino only outputs the voltage, my partner and I used the following chart and generated the code with Webb GPT to output the actual distance;
 
 
 3. Callibrating
