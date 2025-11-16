@@ -5,6 +5,7 @@
 ### Journal No.01
 #### Question: 
 
+How can we create a 3D scanner?
 
 #### Materials:
 
@@ -35,7 +36,10 @@ Setting up the group 1 materials listed above;
 
 We used the sample code on the [Arduino Website](https://docs.arduino.cc/language-reference/en/functions/analog-io/analogRead/) to get the output from the sensor as numbers on the computer;
 
-Since the Arduino only outputs the voltage, my partner and I created the following chart and generated the code with Webb GPT to output the actual distance;
+This out output on the computer shows the voltage of the sensor. As it is shown in the chart below, this sensor outputs different voltage depending on the distance;
+
+
+My partner and I created the following power law regression equation using a chart and generated the code with Webb GPT to output the actual distance;
 
 
 <img src="chart.png" width="300"> 
