@@ -15,7 +15,7 @@ group 1:
 - wires
 - sensor
 - computer (Macbook Air)
-- Adapter
+- adapter
 
 group 2:
 - stepper mortor
