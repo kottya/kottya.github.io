@@ -34,5 +34,23 @@ Please check [Innovator Journal 01](projects/innovatorJournal) for my journey an
 - Set Step pin high, delay, than low to move one step
 - Set direction pin to another direction and move on step
 
+<img src="stepper-motor-code-screenshot.png" width="500">
+
+-----------------
+2. Combining the two codes
 
 
+
+
+-----------------
+### Progress & Problems
+
+------------------
+### What I learned from this project
+------------------
+### Emotional journey
+
+------------------
+### Sources
+
+[https://lastminuteengineers.com/a4988-stepper-motor-driver-arduino-tutorial/](https://lastminuteengineers.com/a4988-stepper-motor-driver-arduino-tutorial/)
