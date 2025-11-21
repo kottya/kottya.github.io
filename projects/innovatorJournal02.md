@@ -38,15 +38,27 @@ Please check [Innovator Journal 01](projects/innovatorJournal) for my journey an
 
 -----------------
 2. Combining the two codes
+- putting together the stepper motor code and the sensor code (reference Innovator Journal 01 Process)
+- modifying the motor code so that one stepper motor spins 180 degrees horizontally per one vertical step of the other motor.
+- Changing the details (for example the delay, so that the sensor has more time to accurately scan)
 
 
 
 
 -----------------
-### Progress & Problems
+### Progress & Problem
+
+Along with my partner, Kailey, two other classmates, Mr. Raus, and Webb GPT, I have done the coding for the sensors with duplex communication, with stepper motors to function together as a pair to form a scanner. 
+
+Our next process will be coding to find the coordinates from the scan and find a way to plot the cooardinates to create a visual scanned image.
 
 ------------------
-### What I learned from this project
+### What I learned from this process
+
+- basic coding (ex. for loop)
+
+
+
 ------------------
 ### Emotional journey
 
