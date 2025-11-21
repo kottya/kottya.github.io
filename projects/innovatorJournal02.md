@@ -27,40 +27,47 @@ Please check [Innovator Journal 01](projects/innovatorJournal) for my journey an
 ### Process: After Class 4 -  Class 5
 
 1. Writing the code to spin the stepper motor.
-- setting each pins
+- Setting each pin
 
- Use for loops to repeat the process:
-- Set direction pin to one direction
-- Set Step pin high, delay, than low to move one step
-- Set direction pin to another direction and move on step
+Using for loops to repeat the process:
+- Set the direction pin to one direction
+- Set the step pin high, delay, then low to move one step
+- Set the direction pin to the other direction and move one step
 
 <img src="stepper-motor-code-screenshot.png" width="500">
 
 -----------------
 2. Combining the two codes
-- putting together the stepper motor code and the sensor code (reference Innovator Journal 01 Process)
-- modifying the motor code so that one stepper motor spins 180 degrees horizontally per one vertical step of the other motor.
-- Changing the details (for example the delay, so that the sensor has more time to accurately scan)
+- Putting together the stepper motor code and the sensor code (refer to Innovator Journal 01 – Process)
+- Modifying the motor code so that one stepper motor rotates 180 degrees horizontally for each vertical step of the other motor
+- Adjusting details—such as the delay—so that the sensor has enough time to scan accurately
 
+<img src="both-code-p1.png" width="500">
+<img src="both-code-p2.png" width="500">
+<img src="both-code-p3.png" width="500">
 
+-----------------------------
 
-
------------------
 ### Progress & Problem
 
-Along with my partner, Kailey, two other classmates, Mr. Raus, and Webb GPT, I have done the coding for the sensors with duplex communication, with stepper motors to function together as a pair to form a scanner. 
+Working with my partner Kailey, two other classmates, Mr. Raus, and Webb GPT, I helped write the code for the sensors with duplex communication, as well as the code for the paired stepper motors that move the sensor. Since this was a continuation of previous classes, we were able to apply the knowledge we had already gained and work more efficiently. I spent about an hour during lab time writing the stepper motor code with Mr. Raus, and once that was complete, we used class time to integrate the sensor code described in the last journal entry, combining everything into one unified program.
 
-Our next process will be coding to find the coordinates from the scan and find a way to plot the cooardinates to create a visual scanned image.
+Our next step will be writing code to extract coordinates from the scan and finding a way to plot those coordinates to create a visual representation of the scanned image. This will be a challenge, but I believe it is achievable if I make good use of the resources and people around me.
 
 ------------------
 ### What I learned from this process
 
-- basic coding (ex. for loop)
-
-
+- basic coding (eg. for loop)
+  
+How to do bigger group work in tech space
+- When we were in groups of four creating the combined code in class, I struggled to work alongside the other pair because we also had to share the physical gears, which limited how many people could participate at once. I learned that we can work more effectively by using separate sets of gears and communicating clearly throughout the process.
 
 ------------------
 ### Emotional journey
+
+Because it has been a while since we started this project, I’ve become more familiar with the most important concepts, the gears, and the skills involved. This project was my first time working with hardware and coding, and at first I felt very overwhelmed —it seemed almost impossible. However, now I’m confident that I can handle basic coding and simple hardware assembly, and I don’t feel as lost as I did in the earlier classes. I’ve also learned who to ask for support and when to reach out when I’m struggling.
+
+I’m still growing as an innovator, so I continue to face small challenges in every part of the process. But I don’t feel as anxious when I encounter them, and I think that’s a good sign of my growth.
 
 ------------------
 ### Sources
