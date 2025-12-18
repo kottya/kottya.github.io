@@ -31,6 +31,7 @@ Please check [Innovator Journal 01](projects/innovatorJournal) and [Innovator Jo
 1. Python coding (class 6)
 We used Python to graph the coordinates we get from the 3D sensor:
 
+---------------------------------------------------------------------
 
 2. Laser cutting parts to assemble the two stepper motors together
 I was is charge of refining the designs made by my classmates.
