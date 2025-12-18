@@ -27,6 +27,13 @@ Please check [Innovator Journal 01](projects/innovatorJournal) and [Innovator Jo
 
 ------------------
 ### Process
+1. Coding in Python to turn sensor ditected results into coordinates and plot them.
+
+2. 
+
+3. 
+
+
 
 1. Python coding (class 6)
 We used Python to graph the coordinates we get from the 3D sensor:
