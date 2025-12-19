@@ -29,7 +29,7 @@ Please check [Innovator Journal 01](projects/innovatorJournal) and [Innovator Jo
 ### Process
 
 1. Adding microstepping
-We added three jumper wires to connect three pair of pins based on the following chart on [CNC sheild guide]{https://www.makerstore.com.au/wp-content/uploads/filebase/publications/CNC-Shield-Guide-v1.0.pdf}
+We added three jumper wires to connect three pair of pins based on the following chart on [CNC sheild guide][https://www.makerstore.com.au/wp-content/uploads/filebase/publications/CNC-Shield-Guide-v1.0.pdf]
 <img width="500" alt="Screenshot 2025-12-18 at 17 12 40" src="https://github.com/user-attachments/assets/470c0af9-a2ca-41c5-bb7a-0119fe0b86e9" />
 
 -----------------------
@@ -89,3 +89,13 @@ The first microstepping procedures went smoothly, and solved the vibration probl
 ### Emotional Journey
 
 This process felt overwhelming but also motivating and meaningful to me. I was flooded with new information and concepts every classes, which I tried my best to keep up. Each concept is very broad and there were a lot to learn about each field. For example, the process with Python and graohing coordinates was completely new to me, and I sometimes felt lost. However, this process definetely help me learn a LOT about coding, hardwares, and prototyping process in general, which was something I have never done before. Now that I went through this process, it makes me feel more comfortable around different tech devices, especially laser cutters. It was my first time helping the design and operating the cutting process, and I realized how fun it was to use the machine. I will definetely learn and do more with the laser cutter, and I look forward to refining our 2D scanner into a 3D scanner with extensions!!!
+
+----------------------------------
+
+### Sources
+
+(https://www.makerstore.com.au/wp-content/uploads/filebase/publications/CNC-Shield-Guide-v1.0.pdf)[https://www.makerstore.com.au/wp-content/uploads/filebase/publications/CNC-Shield-Guide-v1.0.pdf]
+
+Website of my partner, Kaylee Zhu:
+
+[https://jialin-kaylee.github.io/3D_Printer_Journal](https://jialin-kaylee.github.io/3D_Printer_Journal)
