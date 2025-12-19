@@ -23,7 +23,7 @@ How can we create a 3D scanner?
   
 -------------------------------------------------------------------------------------
 
-Please check [Innovator Journal 01](projects/innovatorJournal) and [Innovator Journal 02](projects/innovatorJournal02) for my journey and my process before class 3.
+Please check [Innovator Journal 01](projects/innovatorJournal) and [Innovator Journal 02](projects/innovatorJournal02) for my journey and my process before class 6.
 
 ------------------
 ### Process:
