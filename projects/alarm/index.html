@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,33 +28,17 @@
         .display-area {
             flex: 1;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #333;
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
         }
 
         .current-time {
-            font-size: 80px;
+            font-size: 90px;
             font-weight: bold;
             font-family: 'Courier New', monospace;
             color: #333;
-            text-shadow: 0 2px 6px rgba(255, 255, 255, 0.95);
-        }
-
-        .alarm-time {
-            font-size: 22px;
-            color: #444;
-            margin-top: 10px;
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
         }
 
         /* Control panel at bottom */
@@ -64,6 +48,13 @@
             padding: 20px;
             border-radius: 20px 20px 0 0;
             box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .alarm-time {
+            font-size: 18px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 15px;
         }
 
         .time-setter {
@@ -182,7 +173,6 @@
             font-size: 36px;
             margin-bottom: 10px;
             color: white;
-            text-shadow: none;
         }
 
         .unlock-time {
@@ -330,7 +320,7 @@
             background: #eee;
         }
 
-        /* Sound/Background Modal */
+        /* Settings Modal */
         .settings-modal-content {
             background: rgba(255, 255, 255, 0.98);
             padding: 25px;
@@ -395,15 +385,15 @@
     </style>
 </head>
 <body>
-    <!-- Main Display Area - Shows time over background -->
+    <!-- Main Display Area - Just the time -->
     <div class="display-area">
-        <h1>⏰ Passcode Alarm</h1>
         <div class="current-time" id="currentTime">--:--</div>
-        <div class="alarm-time" id="alarmDisplay">Alarm: 07:30</div>
     </div>
 
     <!-- Control Panel at Bottom -->
     <div class="control-panel">
+        <div class="alarm-time" id="alarmDisplay">⏰ Alarm: 07:30</div>
+        
         <div class="time-setter">
             <div class="time-control">
                 <label>Hour</label>
@@ -594,7 +584,7 @@
         function updateAlarmDisplay() {
             const h = String(alarmHour).padStart(2, '0');
             const m = String(alarmMinute).padStart(2, '0');
-            document.getElementById('alarmDisplay').textContent = `Alarm: ${h}:${m}`;
+            document.getElementById('alarmDisplay').textContent = `⏰ Alarm: ${h}:${m}`;
         }
 
         function toggleAlarm() {
