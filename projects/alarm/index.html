@@ -119,6 +119,70 @@
             margin-bottom: 10px;
         }
 
+        .settings-btn:active {
+            opacity: 0.8;
+        }
+
+        .sound-upload-section {
+            background: #2a2a4e;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .sound-upload-section h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #aaa;
+        }
+
+        .current-sound {
+            font-size: 14px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+            word-break: break-all;
+        }
+
+        .upload-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #6c5ce7;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 8px;
+        }
+
+        .upload-btn:active {
+            opacity: 0.8;
+        }
+
+        .test-sound-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #00b894;
+            color: white;
+            cursor: pointer;
+        }
+
+        .test-sound-btn:active {
+            opacity: 0.8;
+        }
+
+        .test-sound-btn:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
         .status {
             color: #666;
             font-size: 14px;
@@ -309,6 +373,19 @@
         <button class="activate-btn" id="activateBtn" onclick="toggleAlarm()">
             Activate Alarm
         </button>
+
+        <!-- Sound Upload Section -->
+        <div class="sound-upload-section">
+            <h3>🎵 Alarm Sound</h3>
+            <div class="current-sound" id="currentSoundName">Default beep</div>
+            <input type="file" id="fileInput" accept="audio/*" onchange="handleFileUpload(event)">
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                📁 Upload MP3
+            </button>
+            <button class="test-sound-btn" id="testSoundBtn" onclick="testSound()">
+                🔊 Test Sound
+            </button>
+        </div>
         
         <button class="settings-btn" onclick="showPasscodeModal()">
             🔐 Change Passcode
@@ -354,11 +431,6 @@
         </div>
     </div>
 
-    <!-- Audio element for alarm sound -->
-    <audio id="alarmSound" loop>
-        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdH2LkpWQhHRtcYCLlpqWjH9wa3J/i5abl5GEeHR4goqNjYqGgH59foOHiYmIhoN/fn5/goWGhoSDgX9/f4GDhISDgYB/f3+AgYKCgYGAf39/f4CAgIB/f39/f4CAgIB/f39/gICAgH9/f3+AgICAgIB/f3+AgICAgICAf3+AgICAf3+AgIB/f4CAf3+AgH9/gIB/f4CAf39/f39/f39/f4B/f39/f39/f3+Af39/f39/gIB/f39/f4CAgH9/gIB/gICAf4CAgICAgIB/gICAgICAgICAgICAgYGBgYGBgYGBgoKCgoKCgoKCgoKCgoKCgoKCgoKBgYGBgYGBgYCAgICAgICAgICAgICAgICAgICAgYCAgICAgICAgYGBgYGBgYGBgYGBgYGBgYGBgYGAgYGBgYCBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYKCgoKCgoGBgoKBgYKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgQ==" type="audio/wav">
-    </audio>
-
     <script>
         // Alarm state
         let alarmHour = 7;
@@ -368,9 +440,13 @@
         let passcode = localStorage.getItem('alarmPasscode') || '1234';
         let enteredCode = '';
         
-        // Audio context for alarm sound
+        // Audio
         let audioContext = null;
         let alarmInterval = null;
+        let alarmAudio = null;
+        let customSoundData = localStorage.getItem('customAlarmSound') || null;
+        let customSoundName = localStorage.getItem('customAlarmSoundName') || null;
+        let testAudio = null;
 
         // Initialize
         function init() {
@@ -378,12 +454,17 @@
             setInterval(updateClock, 1000);
             setInterval(checkAlarm, 1000);
             
-            // Load saved alarm time
+            // Load saved settings
             const savedHour = localStorage.getItem('alarmHour');
             const savedMinute = localStorage.getItem('alarmMinute');
             if (savedHour) alarmHour = parseInt(savedHour);
             if (savedMinute) alarmMinute = parseInt(savedMinute);
             updateAlarmDisplay();
+            
+            // Update sound name display
+            if (customSoundName) {
+                document.getElementById('currentSoundName').textContent = '🎵 ' + customSoundName;
+            }
         }
 
         function updateClock() {
@@ -446,69 +527,167 @@
             alarmPlaying = true;
             alarmActive = false;
             
-            // Reset main screen button
             document.getElementById('activateBtn').textContent = 'Activate Alarm';
             document.getElementById('activateBtn').classList.remove('active');
             document.getElementById('status').textContent = 'Alarm ringing!';
             
-            // Show unlock screen
             document.getElementById('unlockScreen').classList.add('show');
             
-            // Start alarm sound
             playAlarmSound();
         }
 
+        // Handle file upload
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            
+            if (!file) return;
+            
+            // Check if it's an audio file
+            if (!file.type.startsWith('audio/')) {
+                alert('Please upload an audio file (MP3, WAV, etc.)');
+                return;
+            }
+            
+            // Check file size (limit to 5MB for localStorage)
+            if (file.size > 5 * 1024 * 1024) {
+                alert('File is too large! Please use a file under 5MB.');
+                return;
+            }
+            
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                customSoundData = e.target.result;
+                customSoundName = file.name;
+                
+                // Save to localStorage
+                try {
+                    localStorage.setItem('customAlarmSound', customSoundData);
+                    localStorage.setItem('customAlarmSoundName', customSoundName);
+                    
+                    document.getElementById('currentSoundName').textContent = '🎵 ' + customSoundName;
+                    document.getElementById('status').textContent = 'Sound uploaded successfully!';
+                } catch (e) {
+                    // localStorage might be full
+                    alert('Could not save sound. File might be too large. Try a smaller file.');
+                    customSoundData = null;
+                    customSoundName = null;
+                }
+            };
+            
+            reader.onerror = function() {
+                alert('Error reading file. Please try again.');
+            };
+            
+            reader.readAsDataURL(file);
+        }
+
+        // Test the sound
+        function testSound() {
+            // Stop any currently playing test
+            if (testAudio) {
+                testAudio.pause();
+                testAudio = null;
+            }
+            
+            if (customSoundData) {
+                testAudio = new Audio(customSoundData);
+                testAudio.volume = 1.0;
+                testAudio.play().then(() => {
+                    document.getElementById('status').textContent = 'Playing test sound...';
+                    // Stop after 3 seconds
+                    setTimeout(() => {
+                        if (testAudio) {
+                            testAudio.pause();
+                            testAudio = null;
+                            document.getElementById('status').textContent = 'Test complete';
+                        }
+                    }, 3000);
+                }).catch(e => {
+                    document.getElementById('status').textContent = 'Could not play sound';
+                    console.error(e);
+                });
+            } else {
+                // Test default beep
+                playBeep();
+                document.getElementById('status').textContent = 'Playing default beep...';
+            }
+        }
+
+        // Play alarm sound
         function playAlarmSound() {
-            // Create audio context if needed
+            if (customSoundData) {
+                // Play custom uploaded sound
+                alarmAudio = new Audio(customSoundData);
+                alarmAudio.loop = true;
+                alarmAudio.volume = 1.0;
+                alarmAudio.play().catch(e => {
+                    console.log('Custom audio failed, using beep fallback');
+                    playBeepLoop();
+                });
+            } else {
+                // Play default beep
+                playBeepLoop();
+            }
+            
+            // Also vibrate if supported
+            if (navigator.vibrate) {
+                vibrateLoop();
+            }
+        }
+
+        function playBeep() {
             if (!audioContext) {
                 audioContext = new (window.AudioContext || window.webkitAudioContext)();
             }
             
-            function beep() {
-                if (!alarmPlaying) return;
-                
-                const oscillator = audioContext.createOscillator();
-                const gainNode = audioContext.createGain();
-                
-                oscillator.connect(gainNode);
-                gainNode.connect(audioContext.destination);
-                
-                oscillator.frequency.value = 880;
-                oscillator.type = 'square';
-                
-                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-                
-                oscillator.start(audioContext.currentTime);
-                oscillator.stop(audioContext.currentTime + 0.5);
-            }
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
             
-            // Play beep pattern
-            beep();
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = 880;
+            oscillator.type = 'square';
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.5);
+        }
+
+        function playBeepLoop() {
+            playBeep();
             alarmInterval = setInterval(() => {
                 if (alarmPlaying) {
-                    beep();
-                    setTimeout(beep, 200);
+                    playBeep();
+                    setTimeout(() => {
+                        if (alarmPlaying) playBeep();
+                    }, 200);
                 } else {
                     clearInterval(alarmInterval);
                 }
             }, 1000);
-            
-            // Also try to vibrate
-            if (navigator.vibrate) {
-                function vibrateLoop() {
-                    if (alarmPlaying) {
-                        navigator.vibrate([500, 200, 500, 200]);
-                        setTimeout(vibrateLoop, 1500);
-                    }
-                }
-                vibrateLoop();
+        }
+
+        function vibrateLoop() {
+            if (alarmPlaying && navigator.vibrate) {
+                navigator.vibrate([500, 200, 500, 200]);
+                setTimeout(vibrateLoop, 1500);
             }
         }
 
         function stopAlarm() {
             alarmPlaying = false;
             clearInterval(alarmInterval);
+            
+            // Stop custom audio
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
+                alarmAudio = null;
+            }
             
             // Hide unlock screen
             document.getElementById('unlockScreen').classList.remove('show');
@@ -549,17 +728,18 @@
                 document.getElementById('codeDisplay').textContent = '';
                 
                 // Error beep
-                if (audioContext) {
-                    const osc = audioContext.createOscillator();
-                    const gain = audioContext.createGain();
-                    osc.connect(gain);
-                    gain.connect(audioContext.destination);
-                    osc.frequency.value = 200;
-                    osc.type = 'square';
-                    gain.gain.value = 0.3;
-                    osc.start();
-                    osc.stop(audioContext.currentTime + 0.3);
+                if (!audioContext) {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
                 }
+                const osc = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+                osc.connect(gain);
+                gain.connect(audioContext.destination);
+                osc.frequency.value = 200;
+                osc.type = 'square';
+                gain.gain.value = 0.3;
+                osc.start();
+                osc.stop(audioContext.currentTime + 0.3);
             }
         }
 
@@ -585,7 +765,7 @@
             }
         }
 
-        // Prevent closing/refreshing when alarm is playing
+        // Prevent closing when alarm is playing
         window.onbeforeunload = function() {
             if (alarmPlaying) {
                 return "Alarm is still ringing! Are you sure you want to leave?";
