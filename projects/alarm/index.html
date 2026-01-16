@@ -30,7 +30,7 @@
             max-width: 400px;
             padding: 20px;
             text-align: center;
-            background: transparent;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             margin: 20px;
         }
@@ -39,7 +39,6 @@
             font-size: 28px;
             margin-bottom: 20px;
             color: #333;
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
         }
 
         .current-time {
@@ -47,15 +46,13 @@
             font-weight: bold;
             font-family: 'Courier New', monospace;
             margin-bottom: 10px;
-            color: #333;
-            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+            color: #555;
         }
 
         .alarm-time {
             font-size: 20px;
-            color: #555;
+            color: #888;
             margin-bottom: 30px;
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
         }
 
         .time-setter {
@@ -74,8 +71,7 @@
 
         .time-control label {
             font-size: 16px;
-            color: #555;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            color: #888;
         }
 
         .time-control .buttons {
@@ -88,16 +84,15 @@
             height: 50px;
             font-size: 24px;
             font-weight: bold;
-            border: none;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.85);
-            color: #333;
+            background: #f9f9f9;
+            color: #555;
             cursor: pointer;
-            backdrop-filter: blur(5px);
         }
 
         .time-btn:active {
-            background: rgba(255, 255, 255, 0.95);
+            background: #f0f0f0;
         }
 
         .activate-btn {
@@ -105,98 +100,94 @@
             padding: 18px;
             font-size: 20px;
             font-weight: bold;
-            border: none;
+            border: 1px solid #d0d0d0;
             border-radius: 12px;
-            background: rgba(255, 255, 255, 0.85);
-            color: #333;
+            background: #f5f5f5;
+            color: #444;
             cursor: pointer;
             margin-bottom: 15px;
-            backdrop-filter: blur(5px);
         }
 
         .activate-btn.active {
-            background: rgba(255, 255, 255, 0.95);
+            background: #e8e8e8;
+            border-color: #bbb;
         }
 
         .activate-btn:active {
-            background: rgba(255, 255, 255, 0.95);
+            background: #eeeeee;
         }
 
         .settings-btn {
             width: 100%;
             padding: 14px;
             font-size: 16px;
-            border: none;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.85);
-            color: #333;
+            background: #fafafa;
+            color: #555;
             cursor: pointer;
             margin-bottom: 10px;
-            backdrop-filter: blur(5px);
         }
 
         .settings-btn:active {
-            background: rgba(255, 255, 255, 0.95);
+            background: #f0f0f0;
         }
 
         .sound-upload-section {
-            background: transparent;
+            background: #fcfcfc;
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 15px;
+            border: 1px solid #eee;
         }
 
         .sound-upload-section h3 {
             font-size: 16px;
             margin-bottom: 10px;
-            color: #444;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            color: #777;
         }
 
         .current-sound {
             font-size: 14px;
-            color: #555;
+            color: #666;
             margin-bottom: 10px;
             word-break: break-all;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
 
         .upload-btn {
             width: 100%;
             padding: 12px;
             font-size: 16px;
-            border: none;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.85);
-            color: #333;
+            background: #f7f7f7;
+            color: #555;
             cursor: pointer;
             margin-bottom: 8px;
-            backdrop-filter: blur(5px);
         }
 
         .upload-btn:active {
-            background: rgba(255, 255, 255, 0.95);
+            background: #f0f0f0;
         }
 
         .test-sound-btn {
             width: 100%;
             padding: 10px;
             font-size: 14px;
-            border: none;
+            border: 1px solid #e5e5e5;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.85);
-            color: #444;
+            background: #fafafa;
+            color: #666;
             cursor: pointer;
-            backdrop-filter: blur(5px);
         }
 
         .test-sound-btn:active {
-            background: rgba(255, 255, 255, 0.95);
+            background: #f2f2f2;
         }
 
         .test-sound-btn:disabled {
-            background: rgba(255, 255, 255, 0.5);
-            color: #999;
+            background: #f5f5f5;
+            color: #bbb;
             cursor: not-allowed;
         }
 
@@ -205,66 +196,62 @@
         }
 
         .status {
-            color: #555;
+            color: #aaa;
             font-size: 14px;
             margin-top: 20px;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
 
         /* Background Upload Section */
         .background-upload-section {
-            background: transparent;
+            background: #fcfcfc;
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 15px;
+            border: 1px solid #eee;
         }
 
         .background-upload-section h3 {
             font-size: 16px;
             margin-bottom: 10px;
-            color: #444;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            color: #777;
         }
 
         .current-bg {
             font-size: 14px;
-            color: #555;
+            color: #666;
             margin-bottom: 10px;
             word-break: break-all;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
         }
 
         .bg-btn {
             width: 100%;
             padding: 12px;
             font-size: 16px;
-            border: none;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.85);
-            color: #333;
+            background: #f7f7f7;
+            color: #555;
             cursor: pointer;
             margin-bottom: 8px;
-            backdrop-filter: blur(5px);
         }
 
         .bg-btn:active {
-            background: rgba(255, 255, 255, 0.95);
+            background: #f0f0f0;
         }
 
         .remove-bg-btn {
             width: 100%;
             padding: 10px;
             font-size: 14px;
-            border: none;
+            border: 1px solid #e5e5e5;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.85);
-            color: #444;
+            background: #fafafa;
+            color: #666;
             cursor: pointer;
-            backdrop-filter: blur(5px);
         }
 
         .remove-bg-btn:active {
-            background: rgba(255, 255, 255, 0.95);
+            background: #f2f2f2;
         }
 
         /* Unlock Screen */
@@ -344,23 +331,23 @@
             font-weight: bold;
             border: none;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
             color: #333;
             cursor: pointer;
         }
 
         .numpad-btn:active {
-            background: rgba(255, 255, 255, 1);
+            background: #f0f0f0;
         }
 
         .numpad-btn.clear {
-            background: rgba(255, 255, 255, 0.85);
-            color: #555;
+            background: #f5f5f5;
+            color: #666;
         }
 
         .numpad-btn.submit {
-            background: rgba(255, 255, 255, 0.85);
-            color: #333;
+            background: #f0f0f0;
+            color: #444;
         }
 
         /* Modal */
@@ -382,14 +369,13 @@
         }
 
         .modal-content {
-            background: rgba(255, 255, 255, 0.95);
+            background: #ffffff;
             padding: 30px;
             border-radius: 16px;
             text-align: center;
             width: 90%;
             max-width: 350px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
         }
 
         .modal-content h2 {
@@ -402,24 +388,23 @@
             padding: 15px;
             font-size: 24px;
             text-align: center;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
             margin-bottom: 15px;
             font-family: 'Courier New', monospace;
             letter-spacing: 5px;
-            background: rgba(255, 255, 255, 0.8);
         }
 
         .modal-input:focus {
             outline: none;
-            border-color: rgba(0, 0, 0, 0.2);
+            border-color: #ccc;
         }
 
         .modal-label {
             display: block;
             text-align: left;
             margin-bottom: 5px;
-            color: #666;
+            color: #888;
             font-size: 14px;
         }
 
@@ -433,26 +418,24 @@
         .modal-btn {
             padding: 12px 30px;
             font-size: 18px;
-            border: none;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
             cursor: pointer;
             margin: 5px;
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
         }
 
         .modal-btn.save {
-            background: rgba(240, 240, 240, 0.95);
-            color: #333;
+            background: #f5f5f5;
+            color: #444;
         }
 
         .modal-btn.cancel {
-            background: rgba(250, 250, 250, 0.9);
-            color: #555;
+            background: #fafafa;
+            color: #666;
         }
 
         .modal-btn:active {
-            background: rgba(255, 255, 255, 1);
+            background: #eeeeee;
         }
     </style>
 </head>
