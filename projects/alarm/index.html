@@ -21,237 +21,135 @@
             color: #333;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
         }
 
-        .container {
-            width: 100%;
-            max-width: 400px;
+        /* Main display area - shows background */
+        .display-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            margin: 20px;
         }
 
         h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 24px;
+            margin-bottom: 10px;
             color: #333;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
         }
 
         .current-time {
-            font-size: 72px;
+            font-size: 80px;
             font-weight: bold;
             font-family: 'Courier New', monospace;
-            margin-bottom: 10px;
-            color: #555;
+            color: #333;
+            text-shadow: 0 2px 6px rgba(255, 255, 255, 0.95);
         }
 
         .alarm-time {
-            font-size: 20px;
-            color: #888;
-            margin-bottom: 30px;
+            font-size: 22px;
+            color: #444;
+            margin-top: 10px;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+        }
+
+        /* Control panel at bottom */
+        .control-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
         }
 
         .time-setter {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-bottom: 30px;
+            gap: 30px;
+            margin-bottom: 15px;
         }
 
         .time-control {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .time-control label {
-            font-size: 16px;
-            color: #888;
+            font-size: 14px;
+            color: #666;
         }
 
         .time-control .buttons {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
         .time-btn {
-            width: 50px;
-            height: 50px;
-            font-size: 24px;
+            width: 45px;
+            height: 45px;
+            font-size: 22px;
             font-weight: bold;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
-            background: #f9f9f9;
-            color: #555;
+            background: #f5f5f5;
+            color: #333;
             cursor: pointer;
         }
 
         .time-btn:active {
-            background: #f0f0f0;
+            background: #eee;
         }
 
         .activate-btn {
             width: 100%;
-            padding: 18px;
-            font-size: 20px;
+            padding: 16px;
+            font-size: 18px;
             font-weight: bold;
-            border: 1px solid #d0d0d0;
+            border: none;
             border-radius: 12px;
-            background: #f5f5f5;
-            color: #444;
+            background: #f0f0f0;
+            color: #333;
             cursor: pointer;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .activate-btn.active {
-            background: #e8e8e8;
-            border-color: #bbb;
+            background: #e0e0e0;
         }
 
         .activate-btn:active {
-            background: #eeeeee;
+            background: #e5e5e5;
+        }
+
+        /* Settings buttons row */
+        .settings-row {
+            display: flex;
+            gap: 10px;
         }
 
         .settings-btn {
-            width: 100%;
-            padding: 14px;
-            font-size: 16px;
+            flex: 1;
+            padding: 12px;
+            font-size: 14px;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             background: #fafafa;
             color: #555;
             cursor: pointer;
-            margin-bottom: 10px;
         }
 
         .settings-btn:active {
             background: #f0f0f0;
         }
 
-        .sound-upload-section {
-            background: #fcfcfc;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #eee;
-        }
-
-        .sound-upload-section h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #777;
-        }
-
-        .current-sound {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 10px;
-            word-break: break-all;
-        }
-
-        .upload-btn {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            background: #f7f7f7;
-            color: #555;
-            cursor: pointer;
-            margin-bottom: 8px;
-        }
-
-        .upload-btn:active {
-            background: #f0f0f0;
-        }
-
-        .test-sound-btn {
-            width: 100%;
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            background: #fafafa;
-            color: #666;
-            cursor: pointer;
-        }
-
-        .test-sound-btn:active {
-            background: #f2f2f2;
-        }
-
-        .test-sound-btn:disabled {
-            background: #f5f5f5;
-            color: #bbb;
-            cursor: not-allowed;
-        }
-
         #fileInput, #bgFileInput {
             display: none;
-        }
-
-        .status {
-            color: #aaa;
-            font-size: 14px;
-            margin-top: 20px;
-        }
-
-        /* Background Upload Section */
-        .background-upload-section {
-            background: #fcfcfc;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #eee;
-        }
-
-        .background-upload-section h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #777;
-        }
-
-        .current-bg {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 10px;
-            word-break: break-all;
-        }
-
-        .bg-btn {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            background: #f7f7f7;
-            color: #555;
-            cursor: pointer;
-            margin-bottom: 8px;
-        }
-
-        .bg-btn:active {
-            background: #f0f0f0;
-        }
-
-        .remove-bg-btn {
-            width: 100%;
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            background: #fafafa;
-            color: #666;
-            cursor: pointer;
-        }
-
-        .remove-bg-btn:active {
-            background: #f2f2f2;
         }
 
         /* Unlock Screen */
@@ -284,6 +182,7 @@
             font-size: 36px;
             margin-bottom: 10px;
             color: white;
+            text-shadow: none;
         }
 
         .unlock-time {
@@ -331,23 +230,23 @@
             font-weight: bold;
             border: none;
             border-radius: 10px;
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             color: #333;
             cursor: pointer;
         }
 
         .numpad-btn:active {
-            background: #f0f0f0;
+            background: rgba(255, 255, 255, 1);
         }
 
         .numpad-btn.clear {
-            background: #f5f5f5;
-            color: #666;
+            background: rgba(255, 255, 255, 0.85);
+            color: #555;
         }
 
         .numpad-btn.submit {
-            background: #f0f0f0;
-            color: #444;
+            background: rgba(255, 255, 255, 0.85);
+            color: #333;
         }
 
         /* Modal */
@@ -369,28 +268,29 @@
         }
 
         .modal-content {
-            background: #ffffff;
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 25px;
             border-radius: 16px;
             text-align: center;
             width: 90%;
             max-width: 350px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
         .modal-content h2 {
             margin-bottom: 20px;
             color: #333;
+            font-size: 20px;
         }
 
         .modal-input {
             width: 100%;
-            padding: 15px;
-            font-size: 24px;
+            padding: 14px;
+            font-size: 20px;
             text-align: center;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-family: 'Courier New', monospace;
             letter-spacing: 5px;
         }
@@ -404,50 +304,106 @@
             display: block;
             text-align: left;
             margin-bottom: 5px;
-            color: #888;
-            font-size: 14px;
+            color: #666;
+            font-size: 13px;
         }
 
         .modal-error {
             color: #e57373;
             font-size: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             min-height: 20px;
         }
 
         .modal-btn {
-            padding: 12px 30px;
-            font-size: 18px;
+            padding: 12px 25px;
+            font-size: 16px;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             cursor: pointer;
             margin: 5px;
-        }
-
-        .modal-btn.save {
             background: #f5f5f5;
-            color: #444;
-        }
-
-        .modal-btn.cancel {
-            background: #fafafa;
-            color: #666;
+            color: #333;
         }
 
         .modal-btn:active {
-            background: #eeeeee;
+            background: #eee;
+        }
+
+        /* Sound/Background Modal */
+        .settings-modal-content {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            width: 90%;
+            max-width: 350px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .settings-modal-content h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .current-item {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            word-break: break-all;
+        }
+
+        .modal-action-btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            background: #fafafa;
+            color: #333;
+        }
+
+        .modal-action-btn:active {
+            background: #f0f0f0;
+        }
+
+        .modal-action-btn.danger {
+            color: #999;
+        }
+
+        .modal-close-btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 5px;
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .modal-close-btn:active {
+            background: #e5e5e5;
         }
     </style>
 </head>
 <body>
-    <!-- Main Screen -->
-    <div class="container" id="mainScreen">
+    <!-- Main Display Area - Shows time over background -->
+    <div class="display-area">
         <h1>⏰ Passcode Alarm</h1>
-        
         <div class="current-time" id="currentTime">--:--</div>
-        
         <div class="alarm-time" id="alarmDisplay">Alarm: 07:30</div>
-        
+    </div>
+
+    <!-- Control Panel at Bottom -->
+    <div class="control-panel">
         <div class="time-setter">
             <div class="time-control">
                 <label>Hour</label>
@@ -469,37 +425,14 @@
             Activate Alarm
         </button>
 
-        <!-- Sound Upload Section -->
-        <div class="sound-upload-section">
-            <h3>🎵 Alarm Sound</h3>
-            <div class="current-sound" id="currentSoundName">Default beep</div>
-            <input type="file" id="fileInput" accept="audio/*" onchange="handleFileUpload(event)">
-            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
-                📁 Upload MP3
-            </button>
-            <button class="test-sound-btn" id="testSoundBtn" onclick="testSound()">
-                🔊 Test Sound
-            </button>
+        <div class="settings-row">
+            <button class="settings-btn" onclick="showSoundModal()">🎵 Sound</button>
+            <button class="settings-btn" onclick="showBgModal()">🖼️ Background</button>
+            <button class="settings-btn" onclick="showPasscodeModal()">🔐 Passcode</button>
         </div>
 
-        <!-- Background Upload Section -->
-        <div class="background-upload-section">
-            <h3>🖼️ Background Image</h3>
-            <div class="current-bg" id="currentBgName">Default (white)</div>
-            <input type="file" id="bgFileInput" accept="image/*" onchange="handleBgUpload(event)">
-            <button class="bg-btn" onclick="document.getElementById('bgFileInput').click()">
-                📷 Upload Image
-            </button>
-            <button class="remove-bg-btn" onclick="removeBackground()">
-                ✕ Remove Background
-            </button>
-        </div>
-        
-        <button class="settings-btn" onclick="showPasscodeModal()">
-            🔐 Change Passcode
-        </button>
-        
-        <div class="status" id="status">Ready</div>
+        <input type="file" id="fileInput" accept="audio/*" onchange="handleFileUpload(event)">
+        <input type="file" id="bgFileInput" accept="image/*" onchange="handleBgUpload(event)">
     </div>
 
     <!-- Unlock Screen -->
@@ -546,9 +479,48 @@
             <div class="modal-error" id="modalError"></div>
             
             <div>
-                <button class="modal-btn cancel" onclick="hidePasscodeModal()">Cancel</button>
-                <button class="modal-btn save" onclick="savePasscode()">Save</button>
+                <button class="modal-btn" onclick="hidePasscodeModal()">Cancel</button>
+                <button class="modal-btn" onclick="savePasscode()">Save</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Sound Modal -->
+    <div class="modal" id="soundModal">
+        <div class="settings-modal-content">
+            <h2>🎵 Alarm Sound</h2>
+            
+            <div class="current-item" id="currentSoundDisplay">Default beep</div>
+            
+            <button class="modal-action-btn" onclick="document.getElementById('fileInput').click(); hideSoundModal();">
+                📁 Upload MP3
+            </button>
+            <button class="modal-action-btn" onclick="testSound()">
+                🔊 Test Sound
+            </button>
+            <button class="modal-action-btn danger" onclick="removeSound()">
+                ✕ Remove Sound
+            </button>
+            
+            <button class="modal-close-btn" onclick="hideSoundModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Background Modal -->
+    <div class="modal" id="bgModal">
+        <div class="settings-modal-content">
+            <h2>🖼️ Background Image</h2>
+            
+            <div class="current-item" id="currentBgDisplay">Default (white)</div>
+            
+            <button class="modal-action-btn" onclick="document.getElementById('bgFileInput').click(); hideBgModal();">
+                📷 Upload Image
+            </button>
+            <button class="modal-action-btn danger" onclick="removeBackground()">
+                ✕ Remove Background
+            </button>
+            
+            <button class="modal-close-btn" onclick="hideBgModal()">Close</button>
         </div>
     </div>
 
@@ -588,13 +560,13 @@
             
             // Update sound name display
             if (customSoundName) {
-                document.getElementById('currentSoundName').textContent = '🎵 ' + customSoundName;
+                document.getElementById('currentSoundDisplay').textContent = '🎵 ' + customSoundName;
             }
 
             // Load saved background
             if (customBgData) {
                 document.body.style.backgroundImage = `url(${customBgData})`;
-                document.getElementById('currentBgName').textContent = '🖼️ ' + customBgName;
+                document.getElementById('currentBgDisplay').textContent = '🖼️ ' + customBgName;
             }
         }
 
@@ -628,18 +600,13 @@
         function toggleAlarm() {
             alarmActive = !alarmActive;
             const btn = document.getElementById('activateBtn');
-            const status = document.getElementById('status');
             
             if (alarmActive) {
                 btn.textContent = '✓ Alarm Set';
                 btn.classList.add('active');
-                const h = String(alarmHour).padStart(2, '0');
-                const m = String(alarmMinute).padStart(2, '0');
-                status.textContent = `Alarm will ring at ${h}:${m}`;
             } else {
                 btn.textContent = 'Activate Alarm';
                 btn.classList.remove('active');
-                status.textContent = 'Alarm cancelled';
             }
         }
 
@@ -660,11 +627,28 @@
             
             document.getElementById('activateBtn').textContent = 'Activate Alarm';
             document.getElementById('activateBtn').classList.remove('active');
-            document.getElementById('status').textContent = 'Alarm ringing!';
             
             document.getElementById('unlockScreen').classList.add('show');
             
             playAlarmSound();
+        }
+
+        // Sound Modal
+        function showSoundModal() {
+            document.getElementById('soundModal').classList.add('show');
+        }
+
+        function hideSoundModal() {
+            document.getElementById('soundModal').classList.remove('show');
+        }
+
+        // Background Modal
+        function showBgModal() {
+            document.getElementById('bgModal').classList.add('show');
+        }
+
+        function hideBgModal() {
+            document.getElementById('bgModal').classList.remove('show');
         }
 
         // Handle sound file upload
@@ -693,8 +677,7 @@
                     localStorage.setItem('customAlarmSound', customSoundData);
                     localStorage.setItem('customAlarmSoundName', customSoundName);
                     
-                    document.getElementById('currentSoundName').textContent = '🎵 ' + customSoundName;
-                    document.getElementById('status').textContent = 'Sound uploaded successfully!';
+                    document.getElementById('currentSoundDisplay').textContent = '🎵 ' + customSoundName;
                 } catch (e) {
                     alert('Could not save sound. File might be too large. Try a smaller file.');
                     customSoundData = null;
@@ -707,6 +690,16 @@
             };
             
             reader.readAsDataURL(file);
+        }
+
+        // Remove sound
+        function removeSound() {
+            customSoundData = null;
+            customSoundName = null;
+            localStorage.removeItem('customAlarmSound');
+            localStorage.removeItem('customAlarmSoundName');
+            document.getElementById('currentSoundDisplay').textContent = 'Default beep';
+            hideSoundModal();
         }
 
         // Handle background image upload
@@ -736,8 +729,7 @@
                     localStorage.setItem('customBackgroundName', customBgName);
                     
                     document.body.style.backgroundImage = `url(${customBgData})`;
-                    document.getElementById('currentBgName').textContent = '🖼️ ' + customBgName;
-                    document.getElementById('status').textContent = 'Background updated!';
+                    document.getElementById('currentBgDisplay').textContent = '🖼️ ' + customBgName;
                 } catch (e) {
                     alert('Could not save background. File might be too large. Try a smaller file.');
                     customBgData = null;
@@ -759,8 +751,8 @@
             localStorage.removeItem('customBackground');
             localStorage.removeItem('customBackgroundName');
             document.body.style.backgroundImage = 'none';
-            document.getElementById('currentBgName').textContent = 'Default (white)';
-            document.getElementById('status').textContent = 'Background removed';
+            document.getElementById('currentBgDisplay').textContent = 'Default (white)';
+            hideBgModal();
         }
 
         // Test the sound
@@ -774,21 +766,17 @@
                 testAudio = new Audio(customSoundData);
                 testAudio.volume = 1.0;
                 testAudio.play().then(() => {
-                    document.getElementById('status').textContent = 'Playing test sound...';
                     setTimeout(() => {
                         if (testAudio) {
                             testAudio.pause();
                             testAudio = null;
-                            document.getElementById('status').textContent = 'Test complete';
                         }
                     }, 3000);
                 }).catch(e => {
-                    document.getElementById('status').textContent = 'Could not play sound';
                     console.error(e);
                 });
             } else {
                 playBeep();
-                document.getElementById('status').textContent = 'Playing default beep...';
             }
         }
 
@@ -868,7 +856,6 @@
             enteredCode = '';
             document.getElementById('codeDisplay').textContent = '';
             document.getElementById('errorMessage').textContent = '';
-            document.getElementById('status').textContent = 'Good morning! ☀️';
             
             if (navigator.vibrate) {
                 navigator.vibrate(0);
@@ -963,7 +950,6 @@
             passcode = newCode;
             localStorage.setItem('alarmPasscode', passcode);
             hidePasscodeModal();
-            document.getElementById('status').textContent = '✓ Passcode updated successfully!';
         }
 
         window.onbeforeunload = function() {
