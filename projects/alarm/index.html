@@ -30,7 +30,7 @@
             max-width: 400px;
             padding: 20px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             margin: 20px;
         }
@@ -38,7 +38,7 @@
         h1 {
             font-size: 28px;
             margin-bottom: 20px;
-            color: #000000;
+            color: #333;
         }
 
         .current-time {
@@ -46,12 +46,12 @@
             font-weight: bold;
             font-family: 'Courier New', monospace;
             margin-bottom: 10px;
-            color: #1a2a4a;
+            color: #555;
         }
 
         .alarm-time {
             font-size: 20px;
-            color: #666;
+            color: #888;
             margin-bottom: 30px;
         }
 
@@ -71,7 +71,7 @@
 
         .time-control label {
             font-size: 16px;
-            color: #666;
+            color: #888;
         }
 
         .time-control .buttons {
@@ -84,15 +84,15 @@
             height: 50px;
             font-size: 24px;
             font-weight: bold;
-            border: none;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
-            background: #e0e0e0;
-            color: #333;
+            background: #f9f9f9;
+            color: #555;
             cursor: pointer;
         }
 
         .time-btn:active {
-            background: #cccccc;
+            background: #f0f0f0;
         }
 
         .activate-btn {
@@ -100,55 +100,56 @@
             padding: 18px;
             font-size: 20px;
             font-weight: bold;
-            border: none;
+            border: 1px solid #d0d0d0;
             border-radius: 12px;
-            background: #1a2a4a;
-            color: white;
+            background: #f5f5f5;
+            color: #444;
             cursor: pointer;
             margin-bottom: 15px;
         }
 
         .activate-btn.active {
-            background: #0d1525;
+            background: #e8e8e8;
+            border-color: #bbb;
         }
 
         .activate-btn:active {
-            opacity: 0.8;
+            background: #eeeeee;
         }
 
         .settings-btn {
             width: 100%;
             padding: 14px;
             font-size: 16px;
-            border: none;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
-            background: #333333;
-            color: white;
+            background: #fafafa;
+            color: #555;
             cursor: pointer;
             margin-bottom: 10px;
         }
 
         .settings-btn:active {
-            opacity: 0.8;
+            background: #f0f0f0;
         }
 
         .sound-upload-section {
-            background: #f5f5f5;
+            background: #fcfcfc;
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 15px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #eee;
         }
 
         .sound-upload-section h3 {
             font-size: 16px;
             margin-bottom: 10px;
-            color: #666;
+            color: #777;
         }
 
         .current-sound {
             font-size: 14px;
-            color: #1a2a4a;
+            color: #666;
             margin-bottom: 10px;
             word-break: break-all;
         }
@@ -157,35 +158,36 @@
             width: 100%;
             padding: 12px;
             font-size: 16px;
-            border: none;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
-            background: #666666;
-            color: white;
+            background: #f7f7f7;
+            color: #555;
             cursor: pointer;
             margin-bottom: 8px;
         }
 
         .upload-btn:active {
-            opacity: 0.8;
+            background: #f0f0f0;
         }
 
         .test-sound-btn {
             width: 100%;
             padding: 10px;
             font-size: 14px;
-            border: none;
+            border: 1px solid #e5e5e5;
             border-radius: 8px;
-            background: #999999;
-            color: white;
+            background: #fafafa;
+            color: #666;
             cursor: pointer;
         }
 
         .test-sound-btn:active {
-            opacity: 0.8;
+            background: #f2f2f2;
         }
 
         .test-sound-btn:disabled {
-            background: #ddd;
+            background: #f5f5f5;
+            color: #bbb;
             cursor: not-allowed;
         }
 
@@ -194,29 +196,29 @@
         }
 
         .status {
-            color: #999;
+            color: #aaa;
             font-size: 14px;
             margin-top: 20px;
         }
 
         /* Background Upload Section */
         .background-upload-section {
-            background: #f5f5f5;
+            background: #fcfcfc;
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 15px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #eee;
         }
 
         .background-upload-section h3 {
             font-size: 16px;
             margin-bottom: 10px;
-            color: #666;
+            color: #777;
         }
 
         .current-bg {
             font-size: 14px;
-            color: #1a2a4a;
+            color: #666;
             margin-bottom: 10px;
             word-break: break-all;
         }
@@ -225,31 +227,31 @@
             width: 100%;
             padding: 12px;
             font-size: 16px;
-            border: none;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
-            background: #1a2a4a;
-            color: white;
+            background: #f7f7f7;
+            color: #555;
             cursor: pointer;
             margin-bottom: 8px;
         }
 
         .bg-btn:active {
-            opacity: 0.8;
+            background: #f0f0f0;
         }
 
         .remove-bg-btn {
             width: 100%;
             padding: 10px;
             font-size: 14px;
-            border: none;
+            border: 1px solid #e5e5e5;
             border-radius: 8px;
-            background: #333333;
-            color: white;
+            background: #fafafa;
+            color: #666;
             cursor: pointer;
         }
 
         .remove-bg-btn:active {
-            opacity: 0.8;
+            background: #f2f2f2;
         }
 
         /* Unlock Screen */
@@ -330,22 +332,22 @@
             border: none;
             border-radius: 10px;
             background: white;
-            color: black;
+            color: #333;
             cursor: pointer;
         }
 
         .numpad-btn:active {
-            opacity: 0.8;
+            background: #f0f0f0;
         }
 
         .numpad-btn.clear {
-            background: #333333;
-            color: white;
+            background: #f5f5f5;
+            color: #666;
         }
 
         .numpad-btn.submit {
-            background: #1a2a4a;
-            color: white;
+            background: #f0f0f0;
+            color: #444;
         }
 
         /* Modal */
@@ -356,7 +358,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
             z-index: 500;
             justify-content: center;
             align-items: center;
@@ -373,12 +375,12 @@
             text-align: center;
             width: 90%;
             max-width: 350px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .modal-content h2 {
             margin-bottom: 20px;
-            color: #000;
+            color: #333;
         }
 
         .modal-input {
@@ -386,7 +388,7 @@
             padding: 15px;
             font-size: 24px;
             text-align: center;
-            border: 2px solid #e0e0e0;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
             margin-bottom: 15px;
             font-family: 'Courier New', monospace;
@@ -395,19 +397,19 @@
 
         .modal-input:focus {
             outline: none;
-            border-color: #1a2a4a;
+            border-color: #ccc;
         }
 
         .modal-label {
             display: block;
             text-align: left;
             margin-bottom: 5px;
-            color: #666;
+            color: #888;
             font-size: 14px;
         }
 
         .modal-error {
-            color: #cc0000;
+            color: #e57373;
             font-size: 14px;
             margin-bottom: 15px;
             min-height: 20px;
@@ -416,24 +418,24 @@
         .modal-btn {
             padding: 12px 30px;
             font-size: 18px;
-            border: none;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
             cursor: pointer;
             margin: 5px;
         }
 
         .modal-btn.save {
-            background: #1a2a4a;
-            color: white;
+            background: #f5f5f5;
+            color: #444;
         }
 
         .modal-btn.cancel {
-            background: #e0e0e0;
-            color: #333;
+            background: #fafafa;
+            color: #666;
         }
 
         .modal-btn:active {
-            opacity: 0.8;
+            background: #eeeeee;
         }
     </style>
 </head>
