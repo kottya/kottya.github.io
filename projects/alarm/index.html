@@ -13,8 +13,8 @@
         }
 
         body {
-            background: #1a1a2e;
-            color: white;
+            background: #ffffff;
+            color: #333;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -31,6 +31,7 @@
         h1 {
             font-size: 28px;
             margin-bottom: 20px;
+            color: #000000;
         }
 
         .current-time {
@@ -38,6 +39,7 @@
             font-weight: bold;
             font-family: 'Courier New', monospace;
             margin-bottom: 10px;
+            color: #b19cd9;
         }
 
         .alarm-time {
@@ -62,7 +64,7 @@
 
         .time-control label {
             font-size: 16px;
-            color: #aaa;
+            color: #666;
         }
 
         .time-control .buttons {
@@ -77,13 +79,13 @@
             font-weight: bold;
             border: none;
             border-radius: 8px;
-            background: #333355;
-            color: white;
+            background: #e8e0f0;
+            color: #6b5b7a;
             cursor: pointer;
         }
 
         .time-btn:active {
-            background: #444466;
+            background: #d4c4e0;
         }
 
         .activate-btn {
@@ -113,8 +115,8 @@
             font-size: 16px;
             border: none;
             border-radius: 8px;
-            background: #444466;
-            color: white;
+            background: #e0e0e0;
+            color: #333;
             cursor: pointer;
             margin-bottom: 10px;
         }
@@ -124,21 +126,22 @@
         }
 
         .sound-upload-section {
-            background: #2a2a4e;
+            background: #f5f0fa;
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 15px;
+            border: 1px solid #e0d4ed;
         }
 
         .sound-upload-section h3 {
             font-size: 16px;
             margin-bottom: 10px;
-            color: #aaa;
+            color: #666;
         }
 
         .current-sound {
             font-size: 14px;
-            color: #4CAF50;
+            color: #9b7bb8;
             margin-bottom: 10px;
             word-break: break-all;
         }
@@ -149,7 +152,7 @@
             font-size: 16px;
             border: none;
             border-radius: 8px;
-            background: #6c5ce7;
+            background: #b19cd9;
             color: white;
             cursor: pointer;
             margin-bottom: 8px;
@@ -165,8 +168,8 @@
             font-size: 14px;
             border: none;
             border-radius: 8px;
-            background: #00b894;
-            color: white;
+            background: #a0d9b4;
+            color: #2d5a3d;
             cursor: pointer;
         }
 
@@ -175,7 +178,7 @@
         }
 
         .test-sound-btn:disabled {
-            background: #555;
+            background: #ddd;
             cursor: not-allowed;
         }
 
@@ -184,12 +187,12 @@
         }
 
         .status {
-            color: #666;
+            color: #999;
             font-size: 14px;
             margin-top: 20px;
         }
 
-        /* Unlock Screen */
+        /* Unlock Screen - keeps red for alarm urgency */
         .unlock-screen {
             display: none;
             position: fixed;
@@ -218,6 +221,7 @@
         .unlock-screen h1 {
             font-size: 36px;
             margin-bottom: 10px;
+            color: white;
         }
 
         .unlock-time {
@@ -225,11 +229,13 @@
             font-weight: bold;
             font-family: 'Courier New', monospace;
             margin-bottom: 20px;
+            color: white;
         }
 
         .unlock-instruction {
             font-size: 18px;
             margin-bottom: 10px;
+            color: white;
         }
 
         .code-display {
@@ -239,6 +245,7 @@
             letter-spacing: 10px;
             margin-bottom: 10px;
             min-height: 60px;
+            color: white;
         }
 
         .error-message {
@@ -289,7 +296,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 500;
             justify-content: center;
             align-items: center;
@@ -300,16 +307,18 @@
         }
 
         .modal-content {
-            background: #2a2a4e;
+            background: #ffffff;
             padding: 30px;
             border-radius: 16px;
             text-align: center;
             width: 90%;
             max-width: 350px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .modal-content h2 {
             margin-bottom: 20px;
+            color: #000;
         }
 
         .modal-input {
@@ -317,11 +326,16 @@
             padding: 15px;
             font-size: 24px;
             text-align: center;
-            border: none;
+            border: 2px solid #e0d4ed;
             border-radius: 8px;
             margin-bottom: 20px;
             font-family: 'Courier New', monospace;
             letter-spacing: 5px;
+        }
+
+        .modal-input:focus {
+            outline: none;
+            border-color: #b19cd9;
         }
 
         .modal-btn {
@@ -339,8 +353,8 @@
         }
 
         .modal-btn.cancel {
-            background: #666;
-            color: white;
+            background: #e0e0e0;
+            color: #333;
         }
     </style>
 </head>
