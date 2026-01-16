@@ -13,8 +13,8 @@
         }
 
         body {
-            background: #ffffff;
-            color: #333;
+            background: #1a1a2e;
+            color: white;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -31,7 +31,6 @@
         h1 {
             font-size: 28px;
             margin-bottom: 20px;
-            color: #000000;
         }
 
         .current-time {
@@ -39,7 +38,6 @@
             font-weight: bold;
             font-family: 'Courier New', monospace;
             margin-bottom: 10px;
-            color: #b19cd9;
         }
 
         .alarm-time {
@@ -64,7 +62,7 @@
 
         .time-control label {
             font-size: 16px;
-            color: #666;
+            color: #aaa;
         }
 
         .time-control .buttons {
@@ -79,13 +77,13 @@
             font-weight: bold;
             border: none;
             border-radius: 8px;
-            background: #e8e0f0;
-            color: #6b5b7a;
+            background: #333355;
+            color: white;
             cursor: pointer;
         }
 
         .time-btn:active {
-            background: #d4c4e0;
+            background: #444466;
         }
 
         .activate-btn {
@@ -95,14 +93,14 @@
             font-weight: bold;
             border: none;
             border-radius: 12px;
-            background: #7ec8e3;
+            background: #4CAF50;
             color: white;
             cursor: pointer;
             margin-bottom: 15px;
         }
 
         .activate-btn.active {
-            background: #5ba3c0;
+            background: #2E7D32;
         }
 
         .activate-btn:active {
@@ -115,79 +113,14 @@
             font-size: 16px;
             border: none;
             border-radius: 8px;
-            background: #e0e0e0;
-            color: #333;
-            cursor: pointer;
-            margin-bottom: 10px;
-        }
-
-        .settings-btn:active {
-            opacity: 0.8;
-        }
-
-        .sound-upload-section {
-            background: #f5f0fa;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #e0d4ed;
-        }
-
-        .sound-upload-section h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #666;
-        }
-
-        .current-sound {
-            font-size: 14px;
-            color: #9b7bb8;
-            margin-bottom: 10px;
-            word-break: break-all;
-        }
-
-        .upload-btn {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            border: none;
-            border-radius: 8px;
-            background: #b19cd9;
+            background: #444466;
             color: white;
             cursor: pointer;
-            margin-bottom: 8px;
-        }
-
-        .upload-btn:active {
-            opacity: 0.8;
-        }
-
-        .test-sound-btn {
-            width: 100%;
-            padding: 10px;
-            font-size: 14px;
-            border: none;
-            border-radius: 8px;
-            background: #7ec8e3;
-            color: white;
-            cursor: pointer;
-        }
-
-        .test-sound-btn:active {
-            opacity: 0.8;
-        }
-
-        .test-sound-btn:disabled {
-            background: #ddd;
-            cursor: not-allowed;
-        }
-
-        #fileInput {
-            display: none;
+            margin-bottom: 10px;
         }
 
         .status {
-            color: #999;
+            color: #666;
             font-size: 14px;
             margin-top: 20px;
         }
@@ -221,7 +154,6 @@
         .unlock-screen h1 {
             font-size: 36px;
             margin-bottom: 10px;
-            color: white;
         }
 
         .unlock-time {
@@ -229,13 +161,11 @@
             font-weight: bold;
             font-family: 'Courier New', monospace;
             margin-bottom: 20px;
-            color: white;
         }
 
         .unlock-instruction {
             font-size: 18px;
             margin-bottom: 10px;
-            color: white;
         }
 
         .code-display {
@@ -245,7 +175,6 @@
             letter-spacing: 10px;
             margin-bottom: 10px;
             min-height: 60px;
-            color: white;
         }
 
         .error-message {
@@ -284,7 +213,7 @@
         }
 
         .numpad-btn.submit {
-            background: #7ec8e3;
+            background: #00aa00;
             color: white;
         }
 
@@ -296,7 +225,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 500;
             justify-content: center;
             align-items: center;
@@ -307,18 +236,16 @@
         }
 
         .modal-content {
-            background: #ffffff;
+            background: #2a2a4e;
             padding: 30px;
             border-radius: 16px;
             text-align: center;
             width: 90%;
             max-width: 350px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .modal-content h2 {
             margin-bottom: 20px;
-            color: #000;
         }
 
         .modal-input {
@@ -326,16 +253,11 @@
             padding: 15px;
             font-size: 24px;
             text-align: center;
-            border: 2px solid #e0d4ed;
+            border: none;
             border-radius: 8px;
             margin-bottom: 20px;
             font-family: 'Courier New', monospace;
             letter-spacing: 5px;
-        }
-
-        .modal-input:focus {
-            outline: none;
-            border-color: #b19cd9;
         }
 
         .modal-btn {
@@ -348,13 +270,13 @@
         }
 
         .modal-btn.save {
-            background: #7ec8e3;
+            background: #4CAF50;
             color: white;
         }
 
         .modal-btn.cancel {
-            background: #e0e0e0;
-            color: #333;
+            background: #666;
+            color: white;
         }
     </style>
 </head>
@@ -387,19 +309,6 @@
         <button class="activate-btn" id="activateBtn" onclick="toggleAlarm()">
             Activate Alarm
         </button>
-
-        <!-- Sound Upload Section -->
-        <div class="sound-upload-section">
-            <h3>🎵 Alarm Sound</h3>
-            <div class="current-sound" id="currentSoundName">Default beep</div>
-            <input type="file" id="fileInput" accept="audio/*" onchange="handleFileUpload(event)">
-            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
-                📁 Upload MP3
-            </button>
-            <button class="test-sound-btn" id="testSoundBtn" onclick="testSound()">
-                🔊 Test Sound
-            </button>
-        </div>
         
         <button class="settings-btn" onclick="showPasscodeModal()">
             🔐 Change Passcode
@@ -445,6 +354,11 @@
         </div>
     </div>
 
+    <!-- Audio element for alarm sound -->
+    <audio id="alarmSound" loop>
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdH2LkpWQhHRtcYCLlpqWjH9wa3J/i5abl5GEeHR4goqNjYqGgH59foOHiYmIhoN/fn5/goWGhoSDgX9/f4GDhISDgYB/f3+AgYKCgYGAf39/f4CAgIB/f39/f4CAgIB/f39/gICAgH9/f3+AgICAgIB/f3+AgICAgICAf3+AgICAf3+AgIB/f4CAf3+AgH9/gIB/f4CAf39/f39/f39/f4B/f39/f39/f3+Af39/f39/gIB/f39/f4CAgH9/gIB/gICAf4CAgICAgIB/gICAgICAgICAgICAgYGBgYGBgYGBgoKCgoKCgoKCgoKCgoKCgoKCgoKBgYGBgYGBgYCAgICAgICAgICAgICAgICAgICAgYCAgICAgICAgYGBgYGBgYGBgYGBgYGBgYGBgYGAgYGBgYCBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYKCgoKCgoGBgoKBgYKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgQ==" type="audio/wav">
+    </audio>
+
     <script>
         // Alarm state
         let alarmHour = 7;
@@ -454,13 +368,9 @@
         let passcode = localStorage.getItem('alarmPasscode') || '1234';
         let enteredCode = '';
         
-        // Audio
+        // Audio context for alarm sound
         let audioContext = null;
         let alarmInterval = null;
-        let alarmAudio = null;
-        let customSoundData = localStorage.getItem('customAlarmSound') || null;
-        let customSoundName = localStorage.getItem('customAlarmSoundName') || null;
-        let testAudio = null;
 
         // Initialize
         function init() {
@@ -468,17 +378,12 @@
             setInterval(updateClock, 1000);
             setInterval(checkAlarm, 1000);
             
-            // Load saved settings
+            // Load saved alarm time
             const savedHour = localStorage.getItem('alarmHour');
             const savedMinute = localStorage.getItem('alarmMinute');
             if (savedHour) alarmHour = parseInt(savedHour);
             if (savedMinute) alarmMinute = parseInt(savedMinute);
             updateAlarmDisplay();
-            
-            // Update sound name display
-            if (customSoundName) {
-                document.getElementById('currentSoundName').textContent = '🎵 ' + customSoundName;
-            }
         }
 
         function updateClock() {
@@ -541,167 +446,69 @@
             alarmPlaying = true;
             alarmActive = false;
             
+            // Reset main screen button
             document.getElementById('activateBtn').textContent = 'Activate Alarm';
             document.getElementById('activateBtn').classList.remove('active');
             document.getElementById('status').textContent = 'Alarm ringing!';
             
+            // Show unlock screen
             document.getElementById('unlockScreen').classList.add('show');
             
+            // Start alarm sound
             playAlarmSound();
         }
 
-        // Handle file upload
-        function handleFileUpload(event) {
-            const file = event.target.files[0];
-            
-            if (!file) return;
-            
-            // Check if it's an audio file
-            if (!file.type.startsWith('audio/')) {
-                alert('Please upload an audio file (MP3, WAV, etc.)');
-                return;
-            }
-            
-            // Check file size (limit to 5MB for localStorage)
-            if (file.size > 5 * 1024 * 1024) {
-                alert('File is too large! Please use a file under 5MB.');
-                return;
-            }
-            
-            const reader = new FileReader();
-            
-            reader.onload = function(e) {
-                customSoundData = e.target.result;
-                customSoundName = file.name;
-                
-                // Save to localStorage
-                try {
-                    localStorage.setItem('customAlarmSound', customSoundData);
-                    localStorage.setItem('customAlarmSoundName', customSoundName);
-                    
-                    document.getElementById('currentSoundName').textContent = '🎵 ' + customSoundName;
-                    document.getElementById('status').textContent = 'Sound uploaded successfully!';
-                } catch (e) {
-                    // localStorage might be full
-                    alert('Could not save sound. File might be too large. Try a smaller file.');
-                    customSoundData = null;
-                    customSoundName = null;
-                }
-            };
-            
-            reader.onerror = function() {
-                alert('Error reading file. Please try again.');
-            };
-            
-            reader.readAsDataURL(file);
-        }
-
-        // Test the sound
-        function testSound() {
-            // Stop any currently playing test
-            if (testAudio) {
-                testAudio.pause();
-                testAudio = null;
-            }
-            
-            if (customSoundData) {
-                testAudio = new Audio(customSoundData);
-                testAudio.volume = 1.0;
-                testAudio.play().then(() => {
-                    document.getElementById('status').textContent = 'Playing test sound...';
-                    // Stop after 3 seconds
-                    setTimeout(() => {
-                        if (testAudio) {
-                            testAudio.pause();
-                            testAudio = null;
-                            document.getElementById('status').textContent = 'Test complete';
-                        }
-                    }, 3000);
-                }).catch(e => {
-                    document.getElementById('status').textContent = 'Could not play sound';
-                    console.error(e);
-                });
-            } else {
-                // Test default beep
-                playBeep();
-                document.getElementById('status').textContent = 'Playing default beep...';
-            }
-        }
-
-        // Play alarm sound
         function playAlarmSound() {
-            if (customSoundData) {
-                // Play custom uploaded sound
-                alarmAudio = new Audio(customSoundData);
-                alarmAudio.loop = true;
-                alarmAudio.volume = 1.0;
-                alarmAudio.play().catch(e => {
-                    console.log('Custom audio failed, using beep fallback');
-                    playBeepLoop();
-                });
-            } else {
-                // Play default beep
-                playBeepLoop();
-            }
-            
-            // Also vibrate if supported
-            if (navigator.vibrate) {
-                vibrateLoop();
-            }
-        }
-
-        function playBeep() {
+            // Create audio context if needed
             if (!audioContext) {
                 audioContext = new (window.AudioContext || window.webkitAudioContext)();
             }
             
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
+            function beep() {
+                if (!alarmPlaying) return;
+                
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = 880;
+                oscillator.type = 'square';
+                
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.5);
+            }
             
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.frequency.value = 880;
-            oscillator.type = 'square';
-            
-            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-            
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + 0.5);
-        }
-
-        function playBeepLoop() {
-            playBeep();
+            // Play beep pattern
+            beep();
             alarmInterval = setInterval(() => {
                 if (alarmPlaying) {
-                    playBeep();
-                    setTimeout(() => {
-                        if (alarmPlaying) playBeep();
-                    }, 200);
+                    beep();
+                    setTimeout(beep, 200);
                 } else {
                     clearInterval(alarmInterval);
                 }
             }, 1000);
-        }
-
-        function vibrateLoop() {
-            if (alarmPlaying && navigator.vibrate) {
-                navigator.vibrate([500, 200, 500, 200]);
-                setTimeout(vibrateLoop, 1500);
+            
+            // Also try to vibrate
+            if (navigator.vibrate) {
+                function vibrateLoop() {
+                    if (alarmPlaying) {
+                        navigator.vibrate([500, 200, 500, 200]);
+                        setTimeout(vibrateLoop, 1500);
+                    }
+                }
+                vibrateLoop();
             }
         }
 
         function stopAlarm() {
             alarmPlaying = false;
             clearInterval(alarmInterval);
-            
-            // Stop custom audio
-            if (alarmAudio) {
-                alarmAudio.pause();
-                alarmAudio.currentTime = 0;
-                alarmAudio = null;
-            }
             
             // Hide unlock screen
             document.getElementById('unlockScreen').classList.remove('show');
@@ -742,18 +549,17 @@
                 document.getElementById('codeDisplay').textContent = '';
                 
                 // Error beep
-                if (!audioContext) {
-                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioContext) {
+                    const osc = audioContext.createOscillator();
+                    const gain = audioContext.createGain();
+                    osc.connect(gain);
+                    gain.connect(audioContext.destination);
+                    osc.frequency.value = 200;
+                    osc.type = 'square';
+                    gain.gain.value = 0.3;
+                    osc.start();
+                    osc.stop(audioContext.currentTime + 0.3);
                 }
-                const osc = audioContext.createOscillator();
-                const gain = audioContext.createGain();
-                osc.connect(gain);
-                gain.connect(audioContext.destination);
-                osc.frequency.value = 200;
-                osc.type = 'square';
-                gain.gain.value = 0.3;
-                osc.start();
-                osc.stop(audioContext.currentTime + 0.3);
             }
         }
 
@@ -779,7 +585,7 @@
             }
         }
 
-        // Prevent closing when alarm is playing
+        // Prevent closing/refreshing when alarm is playing
         window.onbeforeunload = function() {
             if (alarmPlaying) {
                 return "Alarm is still ringing! Are you sure you want to leave?";
