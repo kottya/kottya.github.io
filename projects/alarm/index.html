@@ -328,7 +328,7 @@
             text-align: center;
             border: 2px solid #e0d4ed;
             border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-family: 'Courier New', monospace;
             letter-spacing: 5px;
         }
@@ -336,6 +336,21 @@
         .modal-input:focus {
             outline: none;
             border-color: #b19cd9;
+        }
+
+        .modal-label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .modal-error {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-bottom: 15px;
+            min-height: 20px;
         }
 
         .modal-btn {
@@ -355,6 +370,10 @@
         .modal-btn.cancel {
             background: #e0e0e0;
             color: #333;
+        }
+
+        .modal-btn:active {
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -435,9 +454,22 @@
     <!-- Passcode Modal -->
     <div class="modal" id="passcodeModal">
         <div class="modal-content">
-            <h2>🔐 Set Passcode</h2>
+            <h2>🔐 Change Passcode</h2>
+            
+            <label class="modal-label">Current Passcode</label>
+            <input type="tel" class="modal-input" id="oldPasscodeInput" 
+                   placeholder="••••" maxlength="8">
+            
+            <label class="modal-label">New Passcode</label>
             <input type="tel" class="modal-input" id="newPasscodeInput" 
-                   placeholder="1234" maxlength="8">
+                   placeholder="••••" maxlength="8">
+            
+            <label class="modal-label">Confirm New Passcode</label>
+            <input type="tel" class="modal-input" id="confirmPasscodeInput" 
+                   placeholder="••••" maxlength="8">
+            
+            <div class="modal-error" id="modalError"></div>
+            
             <div>
                 <button class="modal-btn cancel" onclick="hidePasscodeModal()">Cancel</button>
                 <button class="modal-btn save" onclick="savePasscode()">Save</button>
@@ -759,8 +791,11 @@
 
         function showPasscodeModal() {
             document.getElementById('passcodeModal').classList.add('show');
-            document.getElementById('newPasscodeInput').value = passcode;
-            document.getElementById('newPasscodeInput').focus();
+            document.getElementById('oldPasscodeInput').value = '';
+            document.getElementById('newPasscodeInput').value = '';
+            document.getElementById('confirmPasscodeInput').value = '';
+            document.getElementById('modalError').textContent = '';
+            document.getElementById('oldPasscodeInput').focus();
         }
 
         function hidePasscodeModal() {
@@ -768,15 +803,48 @@
         }
 
         function savePasscode() {
+            const oldCode = document.getElementById('oldPasscodeInput').value;
             const newCode = document.getElementById('newPasscodeInput').value;
-            if (newCode.length >= 4) {
-                passcode = newCode;
-                localStorage.setItem('alarmPasscode', passcode);
-                hidePasscodeModal();
-                document.getElementById('status').textContent = 'Passcode updated!';
-            } else {
-                alert('Passcode must be at least 4 digits');
+            const confirmCode = document.getElementById('confirmPasscodeInput').value;
+            const errorElement = document.getElementById('modalError');
+            
+            // Check if old passcode is correct
+            if (oldCode !== passcode) {
+                errorElement.textContent = '❌ Current passcode is incorrect';
+                document.getElementById('oldPasscodeInput').value = '';
+                document.getElementById('oldPasscodeInput').focus();
+                return;
             }
+            
+            // Check if new passcode is long enough
+            if (newCode.length < 4) {
+                errorElement.textContent = '❌ New passcode must be at least 4 digits';
+                document.getElementById('newPasscodeInput').focus();
+                return;
+            }
+            
+            // Check if new passcodes match
+            if (newCode !== confirmCode) {
+                errorElement.textContent = '❌ New passcodes do not match';
+                document.getElementById('confirmPasscodeInput').value = '';
+                document.getElementById('confirmPasscodeInput').focus();
+                return;
+            }
+            
+            // Check if new passcode is same as old
+            if (newCode === oldCode) {
+                errorElement.textContent = '❌ New passcode must be different';
+                document.getElementById('newPasscodeInput').value = '';
+                document.getElementById('confirmPasscodeInput').value = '';
+                document.getElementById('newPasscodeInput').focus();
+                return;
+            }
+            
+            // All checks passed - save new passcode
+            passcode = newCode;
+            localStorage.setItem('alarmPasscode', passcode);
+            hidePasscodeModal();
+            document.getElementById('status').textContent = '✓ Passcode updated successfully!';
         }
 
         // Prevent closing when alarm is playing
