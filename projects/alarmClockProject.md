@@ -33,7 +33,9 @@ Low ~ Mid tech:
 -----------
 ### Phase 3: How?
 
-My first idea was to make an app that can play her favorite music, and can be controlled by my dad. However, after a little bit of research, I found out that iOS have unique system of notification when apps are closed.
+My first idea was to make an app that can play her favorite music, and can be controlled by my dad. However, after a conversation with WebbGPT, I found out that iOS have unique system of notification when apps are closed.
+
+Here is my conversation with WebbGPT while I explored the options of solving this problem:
 
 
 I also researched about connecting/relating two devices, which will invlove coding with high complication. Thus, I first decided to make a website with alarm functions with passcode.
