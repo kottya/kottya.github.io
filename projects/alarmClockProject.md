@@ -37,6 +37,7 @@ My first idea was to make an app that can play her favorite music, and can be co
 
 Here is my conversation with WebbGPT while I explored the options of solving this problem:
 
+<img src="convo1.png" width="300"> <img src="convo2.png" width="300"><img src="convo3.png" width="300"><img src="convo4.png" width="300"><img src="convo5.png" width="300"><img src="convo5.png" width="300">
 
 I also researched about connecting/relating two devices, which will invlove coding with high complication. Thus, I first decided to make a website with alarm functions with passcode.
 
