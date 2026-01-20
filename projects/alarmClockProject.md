@@ -1,5 +1,15 @@
 # Alarm Clock Project
 
+
+### Motivating Question:
+- How can I help improve my families' life with my product?
+
+### Material
+- MacBook
+- GitHub
+- WebbGPT
+--------------------------------------------
+
 ### Phase 1: Who?
 I interviewed my dad to figure out what problems he have and what I can solve by doing a project. He told me that he has been doing a lot of chores recently, and one of his hardest tasks in a day is waking up my little sister.
 
@@ -46,4 +56,17 @@ My first idea was to make an app that can play her favorite music, and can be co
 6. I changed the plaement of buttons so it won't interfere with the background step: [Alarm final draft](https://kottya.github.io/projects/alarm/)
 <img src="alarm_finfin.png " width="300">
 
+-------------
+
+### Growth
+
+- My strength: improving the prototype even after it is done
+
+- what did you learn about your stakeholders, the design process, and technical aspects of your experiment?
+
+  My dad and my sister: I think this was a great chance for me to catch up with my family and learn what was going on in their life, since I have been missing out on a lot after leaving my home and coming to Webb. I learned a lot about his new business which ended not aligning with the process, but I found it very interesting and I learned a lot about his values.
+
+- Design process: I learned how to limit function and choose what to sacrifice and what to not in order to make it to the deadline. In this project I decided to not make it into an app and not have inter-device connections in order to have a prototype by the deadline
+
+- Technical aspect: I learned about the notification limitation of iOS.
 
