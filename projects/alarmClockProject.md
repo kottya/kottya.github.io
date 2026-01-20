@@ -13,6 +13,10 @@
 ### Phase 1: Who?
 I interviewed my dad to figure out what problems he have and what I can solve by doing a project. He told me that he has been doing a lot of chores recently, and one of his hardest tasks in a day is waking up my little sister.
 
+Interview note:
+
+<img src="Interview_memo.png" width="600">
+
 ----------
 ### Phase 2: What?
 I brainstormed to come up with possible solutions in no/low tech and mid tech approach.
@@ -29,7 +33,10 @@ Low ~ Mid tech:
 -----------
 ### Phase 3: How?
 
-My first idea was to make an app that can play her favorite music, and can be controlled by my dad. However, after a little bit of research, I found out that iOS have unique system of notification when apps are closed. I also researched about connecting/relating two devices, which will invlove coding with high complication. Thus, I first decided to make a website with alarm functions with passcode.
+My first idea was to make an app that can play her favorite music, and can be controlled by my dad. However, after a little bit of research, I found out that iOS have unique system of notification when apps are closed.
+
+
+I also researched about connecting/relating two devices, which will invlove coding with high complication. Thus, I first decided to make a website with alarm functions with passcode.
 
 (Because of my inability for coding, I relied on [WebbGPT](www.webbgpt.ai) for coding for this project. However, I only used it to make my ideas come to life)
 
