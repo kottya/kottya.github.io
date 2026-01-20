@@ -24,12 +24,20 @@ My first idea was to make an app that can play her favorite music, and can be co
 (Because of my inability for coding, I relied on [WebbGPT](www.webbgpt.ai) for coding for this project. However, I only used it to make my ideas come to life)
 
 1. I started with a simple website where people can set an alarm with a passcode. Here is the first version:[Alarm first draft](https://kottya.github.io/projects/alarm/ver1)
+<img src="alarm_ver.1" width="500">
 
 
 2. I added a function where people can upload their favorite music as mp3 to use it as their alarm: [Alarm second draft](https://kottya.github.io/projects/alarm/ver2)
+<img src="alarm_ver.2" width="500">
 
 3. I realized that the version of the draft then allowed people to change passwords. Since my goal is for my dad to use this to wake up my sister, I figured that it is the best if I can lock the password changing function itself:[Alarm third draft](https://kottya.github.io/projects/alarm/ver3)
+<img src="alarm_ver.3" width="500">
+   
 
-4. I added background changing function to add a little joy to waking up: [Alarm fourth draft](https://kottya.github.io/projects/alarm/ver4)
+r. I added background changing function to add a little joy to waking up: [Alarm fourth draft](https://kottya.github.io/projects/alarm/ver4)
+<img src="alarm_ver.4" width="500">
+<img src="alarm_ver.4_demo" width="500">
 
-5. I changed the placement of buttons so it won't interfere with the background step: [Alarm final draft](https://kottya.github.io/projects/alarm/)
+6. I changed the plaement of buttons so it won't interfere with the background step: [Alarm final draft](https://kottya.github.io/projects/alarm/)
+<img src="alarm_ver.fi, " width="500">
+<img src="alarm_ver.fin_demo" width="500">
