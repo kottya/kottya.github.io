@@ -35,13 +35,15 @@ My first idea was to make an app that can play her favorite music, and can be co
 3. I realized that the version of the draft then allowed people to change passwords. Since my goal is for my dad to use this to wake up my sister, I figured that it is the best if I can lock the password changing function itself:[Alarm third draft](https://kottya.github.io/projects/alarm/ver3)
 
 <img src="alarm_ver.3.png" width="300">
-   
+<img src="alarm_ver.4_demo.png" width="300">   
 
-r. I added background changing function to add a little joy to waking up: [Alarm fourth draft](https://kottya.github.io/projects/alarm/ver4)
-
-<img src="alarm_ver.4.png" width="300">
-<img src="alarm_ver.4_demo.png" width="300">
-
-6. I changed the plaement of buttons so it won't interfere with the background step: [Alarm final draft](https://kottya.github.io/projects/alarm/)
+5. I added background changing function to add a little joy to waking up: [Alarm fourth draft](https://kottya.github.io/projects/alarm/ver4)
 <img src="alarm_ver.fin.png " width="300">
 <img src="alarm_ver.fin_demo.png" width="300">
+
+
+
+6. I changed the plaement of buttons so it won't interfere with the background step: [Alarm final draft](https://kottya.github.io/projects/alarm/)
+<img src="alarm_finfin.png " width="300">
+
+
