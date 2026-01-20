@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passcode Alarm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .current-time {
+            font-size: 72px;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 10px;
+            color: #b19cd9;
+        }
+
+        .alarm-time {
+            font-size: 20px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .time-setter {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .time-control {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .time-control label {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .time-control .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .time-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            background: #e8e0f0;
+            color: #6b5b7a;
+            cursor: pointer;
+        }
+
+        .time-btn:active {
+            background: #d4c4e0;
+        }
+
+        .activate-btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            background: #7ec8e3;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .activate-btn.active {
+            background: #5ba3c0;
+        }
+
+        .activate-btn:active {
+            opacity: 0.8;
+        }
+
+        .settings-btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #e0e0e0;
+            color: #333;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .settings-btn:active {
+            opacity: 0.8;
+        }
+
+        .sound-upload-section {
+            background: #f5f0fa;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #e0d4ed;
+        }
+
+        .sound-upload-section h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .current-sound {
+            font-size: 14px;
+            color: #9b7bb8;
+            margin-bottom: 10px;
+            word-break: break-all;
+        }
+
+        .upload-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #b19cd9;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 8px;
+        }
+
+        .upload-btn:active {
+            opacity: 0.8;
+        }
+
+        .test-sound-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #7ec8e3;
+            color: white;
+            cursor: pointer;
+        }
+
+        .test-sound-btn:active {
+            opacity: 0.8;
+        }
+
+        .test-sound-btn:disabled {
+            background: #ddd;
+            cursor: not-allowed;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .status {
+            color: #999;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* Unlock Screen */
+        .unlock-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ff0000;
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: flash 0.5s infinite alternate;
+        }
+
+        .unlock-screen.show {
+            display: flex;
+        }
+
+        @keyframes flash {
+            from { background: #ff0000; }
+            to { background: #cc0000; }
+        }
+
+        .unlock-screen h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .unlock-time {
+            font-size: 56px;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .unlock-instruction {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .code-display {
+            font-size: 48px;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 10px;
+            margin-bottom: 10px;
+            min-height: 60px;
+            color: white;
+        }
+
+        .error-message {
+            color: yellow;
+            font-weight: bold;
+            font-size: 18px;
+            min-height: 25px;
+            margin-bottom: 15px;
+        }
+
+        .numpad {
+            display: grid;
+            grid-template-columns: repeat(3, 70px);
+            gap: 12px;
+        }
+
+        .numpad-btn {
+            width: 70px;
+            height: 70px;
+            font-size: 28px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: black;
+            cursor: pointer;
+        }
+
+        .numpad-btn:active {
+            opacity: 0.8;
+        }
+
+        .numpad-btn.clear {
+            background: #ff6600;
+            color: white;
+        }
+
+        .numpad-btn.submit {
+            background: #7ec8e3;
+            color: white;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            width: 90%;
+            max-width: 350px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .modal-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 24px;
+            text-align: center;
+            border: 2px solid #e0d4ed;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 5px;
+        }
+
+        .modal-input:focus {
+            outline: none;
+            border-color: #b19cd9;
+        }
+
+        .modal-label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .modal-error {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-bottom: 15px;
+            min-height: 20px;
+        }
+
+        .modal-btn {
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .modal-btn.save {
+            background: #7ec8e3;
+            color: white;
+        }
+
+        .modal-btn.cancel {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .modal-btn:active {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Screen -->
+    <div class="container" id="mainScreen">
+        <h1>⏰ Passcode Alarm</h1>
+        
+        <div class="current-time" id="currentTime">--:--</div>
+        
+        <div class="alarm-time" id="alarmDisplay">Alarm: 07:30</div>
+        
+        <div class="time-setter">
+            <div class="time-control">
+                <label>Hour</label>
+                <div class="buttons">
+                    <button class="time-btn" onclick="adjustTime('hour', -1)">−</button>
+                    <button class="time-btn" onclick="adjustTime('hour', 1)">+</button>
+                </div>
+            </div>
+            <div class="time-control">
+                <label>Minute</label>
+                <div class="buttons">
+                    <button class="time-btn" onclick="adjustTime('minute', -1)">−</button>
+                    <button class="time-btn" onclick="adjustTime('minute', 1)">+</button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="activate-btn" id="activateBtn" onclick="toggleAlarm()">
+            Activate Alarm
+        </button>
+
+        <!-- Sound Upload Section -->
+        <div class="sound-upload-section">
+            <h3>🎵 Alarm Sound</h3>
+            <div class="current-sound" id="currentSoundName">Default beep</div>
+            <input type="file" id="fileInput" accept="audio/*" onchange="handleFileUpload(event)">
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                📁 Upload MP3
+            </button>
+            <button class="test-sound-btn" id="testSoundBtn" onclick="testSound()">
+                🔊 Test Sound
+            </button>
+        </div>
+        
+        <button class="settings-btn" onclick="showPasscodeModal()">
+            🔐 Change Passcode
+        </button>
+        
+        <div class="status" id="status">Ready</div>
+    </div>
+
+    <!-- Unlock Screen -->
+    <div class="unlock-screen" id="unlockScreen">
+        <h1>⏰ WAKE UP! ⏰</h1>
+        <div class="unlock-time" id="unlockTime">--:--</div>
+        <div class="unlock-instruction">Enter passcode to stop alarm:</div>
+        <div class="code-display" id="codeDisplay"></div>
+        <div class="error-message" id="errorMessage"></div>
+        
+        <div class="numpad">
+            <button class="numpad-btn" onclick="pressKey('1')">1</button>
+            <button class="numpad-btn" onclick="pressKey('2')">2</button>
+            <button class="numpad-btn" onclick="pressKey('3')">3</button>
+            <button class="numpad-btn" onclick="pressKey('4')">4</button>
+            <button class="numpad-btn" onclick="pressKey('5')">5</button>
+            <button class="numpad-btn" onclick="pressKey('6')">6</button>
+            <button class="numpad-btn" onclick="pressKey('7')">7</button>
+            <button class="numpad-btn" onclick="pressKey('8')">8</button>
+            <button class="numpad-btn" onclick="pressKey('9')">9</button>
+            <button class="numpad-btn clear" onclick="pressKey('C')">C</button>
+            <button class="numpad-btn" onclick="pressKey('0')">0</button>
+            <button class="numpad-btn submit" onclick="pressKey('✓')">✓</button>
+        </div>
+    </div>
+
+    <!-- Passcode Modal -->
+    <div class="modal" id="passcodeModal">
+        <div class="modal-content">
+            <h2>🔐 Change Passcode</h2>
+            
+            <label class="modal-label">Current Passcode</label>
+            <input type="tel" class="modal-input" id="oldPasscodeInput" 
+                   placeholder="••••" maxlength="8">
+            
+            <label class="modal-label">New Passcode</label>
+            <input type="tel" class="modal-input" id="newPasscodeInput" 
+                   placeholder="••••" maxlength="8">
+            
+            <label class="modal-label">Confirm New Passcode</label>
+            <input type="tel" class="modal-input" id="confirmPasscodeInput" 
+                   placeholder="••••" maxlength="8">
+            
+            <div class="modal-error" id="modalError"></div>
+            
+            <div>
+                <button class="modal-btn cancel" onclick="hidePasscodeModal()">Cancel</button>
+                <button class="modal-btn save" onclick="savePasscode()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Alarm state
+        let alarmHour = 7;
+        let alarmMinute = 30;
+        let alarmActive = false;
+        let alarmPlaying = false;
+        let passcode = localStorage.getItem('alarmPasscode') || '1234';
+        let enteredCode = '';
+        
+        // Audio
+        let audioContext = null;
+        let alarmInterval = null;
+        let alarmAudio = null;
+        let customSoundData = localStorage.getItem('customAlarmSound') || null;
+        let customSoundName = localStorage.getItem('customAlarmSoundName') || null;
+        let testAudio = null;
+
+        // Initialize
+        function init() {
+            updateClock();
+            setInterval(updateClock, 1000);
+            setInterval(checkAlarm, 1000);
+            
+            // Load saved settings
+            const savedHour = localStorage.getItem('alarmHour');
+            const savedMinute = localStorage.getItem('alarmMinute');
+            if (savedHour) alarmHour = parseInt(savedHour);
+            if (savedMinute) alarmMinute = parseInt(savedMinute);
+            updateAlarmDisplay();
+            
+            // Update sound name display
+            if (customSoundName) {
+                document.getElementById('currentSoundName').textContent = '🎵 ' + customSoundName;
+            }
+        }
+
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.toTimeString().slice(0, 5);
+            document.getElementById('currentTime').textContent = timeStr;
+            
+            if (alarmPlaying) {
+                document.getElementById('unlockTime').textContent = timeStr;
+            }
+        }
+
+        function adjustTime(unit, delta) {
+            if (unit === 'hour') {
+                alarmHour = (alarmHour + delta + 24) % 24;
+                localStorage.setItem('alarmHour', alarmHour);
+            } else {
+                alarmMinute = (alarmMinute + delta + 60) % 60;
+                localStorage.setItem('alarmMinute', alarmMinute);
+            }
+            updateAlarmDisplay();
+        }
+
+        function updateAlarmDisplay() {
+            const h = String(alarmHour).padStart(2, '0');
+            const m = String(alarmMinute).padStart(2, '0');
+            document.getElementById('alarmDisplay').textContent = `Alarm: ${h}:${m}`;
+        }
+
+        function toggleAlarm() {
+            alarmActive = !alarmActive;
+            const btn = document.getElementById('activateBtn');
+            const status = document.getElementById('status');
+            
+            if (alarmActive) {
+                btn.textContent = '✓ Alarm Set';
+                btn.classList.add('active');
+                const h = String(alarmHour).padStart(2, '0');
+                const m = String(alarmMinute).padStart(2, '0');
+                status.textContent = `Alarm will ring at ${h}:${m}`;
+            } else {
+                btn.textContent = 'Activate Alarm';
+                btn.classList.remove('active');
+                status.textContent = 'Alarm cancelled';
+            }
+        }
+
+        function checkAlarm() {
+            if (!alarmActive || alarmPlaying) return;
+            
+            const now = new Date();
+            if (now.getHours() === alarmHour && 
+                now.getMinutes() === alarmMinute && 
+                now.getSeconds() < 2) {
+                triggerAlarm();
+            }
+        }
+
+        function triggerAlarm() {
+            alarmPlaying = true;
+            alarmActive = false;
+            
+            document.getElementById('activateBtn').textContent = 'Activate Alarm';
+            document.getElementById('activateBtn').classList.remove('active');
+            document.getElementById('status').textContent = 'Alarm ringing!';
+            
+            document.getElementById('unlockScreen').classList.add('show');
+            
+            playAlarmSound();
+        }
+
+        // Handle file upload
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            
+            if (!file) return;
+            
+            // Check if it's an audio file
+            if (!file.type.startsWith('audio/')) {
+                alert('Please upload an audio file (MP3, WAV, etc.)');
+                return;
+            }
+            
+            // Check file size (limit to 5MB for localStorage)
+            if (file.size > 5 * 1024 * 1024) {
+                alert('File is too large! Please use a file under 5MB.');
+                return;
+            }
+            
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                customSoundData = e.target.result;
+                customSoundName = file.name;
+                
+                // Save to localStorage
+                try {
+                    localStorage.setItem('customAlarmSound', customSoundData);
+                    localStorage.setItem('customAlarmSoundName', customSoundName);
+                    
+                    document.getElementById('currentSoundName').textContent = '🎵 ' + customSoundName;
+                    document.getElementById('status').textContent = 'Sound uploaded successfully!';
+                } catch (e) {
+                    // localStorage might be full
+                    alert('Could not save sound. File might be too large. Try a smaller file.');
+                    customSoundData = null;
+                    customSoundName = null;
+                }
+            };
+            
+            reader.onerror = function() {
+                alert('Error reading file. Please try again.');
+            };
+            
+            reader.readAsDataURL(file);
+        }
+
+        // Test the sound
+        function testSound() {
+            // Stop any currently playing test
+            if (testAudio) {
+                testAudio.pause();
+                testAudio = null;
+            }
+            
+            if (customSoundData) {
+                testAudio = new Audio(customSoundData);
+                testAudio.volume = 1.0;
+                testAudio.play().then(() => {
+                    document.getElementById('status').textContent = 'Playing test sound...';
+                    // Stop after 3 seconds
+                    setTimeout(() => {
+                        if (testAudio) {
+                            testAudio.pause();
+                            testAudio = null;
+                            document.getElementById('status').textContent = 'Test complete';
+                        }
+                    }, 3000);
+                }).catch(e => {
+                    document.getElementById('status').textContent = 'Could not play sound';
+                    console.error(e);
+                });
+            } else {
+                // Test default beep
+                playBeep();
+                document.getElementById('status').textContent = 'Playing default beep...';
+            }
+        }
+
+        // Play alarm sound
+        function playAlarmSound() {
+            if (customSoundData) {
+                // Play custom uploaded sound
+                alarmAudio = new Audio(customSoundData);
+                alarmAudio.loop = true;
+                alarmAudio.volume = 1.0;
+                alarmAudio.play().catch(e => {
+                    console.log('Custom audio failed, using beep fallback');
+                    playBeepLoop();
+                });
+            } else {
+                // Play default beep
+                playBeepLoop();
+            }
+            
+            // Also vibrate if supported
+            if (navigator.vibrate) {
+                vibrateLoop();
+            }
+        }
+
+        function playBeep() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = 880;
+            oscillator.type = 'square';
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.5);
+        }
+
+        function playBeepLoop() {
+            playBeep();
+            alarmInterval = setInterval(() => {
+                if (alarmPlaying) {
+                    playBeep();
+                    setTimeout(() => {
+                        if (alarmPlaying) playBeep();
+                    }, 200);
+                } else {
+                    clearInterval(alarmInterval);
+                }
+            }, 1000);
+        }
+
+        function vibrateLoop() {
+            if (alarmPlaying && navigator.vibrate) {
+                navigator.vibrate([500, 200, 500, 200]);
+                setTimeout(vibrateLoop, 1500);
+            }
+        }
+
+        function stopAlarm() {
+            alarmPlaying = false;
+            clearInterval(alarmInterval);
+            
+            // Stop custom audio
+            if (alarmAudio) {
+                alarmAudio.pause();
+                alarmAudio.currentTime = 0;
+                alarmAudio = null;
+            }
+            
+            // Hide unlock screen
+            document.getElementById('unlockScreen').classList.remove('show');
+            
+            // Reset
+            enteredCode = '';
+            document.getElementById('codeDisplay').textContent = '';
+            document.getElementById('errorMessage').textContent = '';
+            document.getElementById('status').textContent = 'Good morning! ☀️';
+            
+            // Stop vibration
+            if (navigator.vibrate) {
+                navigator.vibrate(0);
+            }
+        }
+
+        function pressKey(key) {
+            if (key === 'C') {
+                enteredCode = '';
+                document.getElementById('codeDisplay').textContent = '';
+                document.getElementById('errorMessage').textContent = '';
+            } else if (key === '✓') {
+                checkPasscode();
+            } else {
+                if (enteredCode.length < 8) {
+                    enteredCode += key;
+                    document.getElementById('codeDisplay').textContent = enteredCode;
+                }
+            }
+        }
+
+        function checkPasscode() {
+            if (enteredCode === passcode) {
+                stopAlarm();
+            } else {
+                document.getElementById('errorMessage').textContent = '❌ WRONG! Try again!';
+                enteredCode = '';
+                document.getElementById('codeDisplay').textContent = '';
+                
+                // Error beep
+                if (!audioContext) {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                const osc = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+                osc.connect(gain);
+                gain.connect(audioContext.destination);
+                osc.frequency.value = 200;
+                osc.type = 'square';
+                gain.gain.value = 0.3;
+                osc.start();
+                osc.stop(audioContext.currentTime + 0.3);
+            }
+        }
+
+        function showPasscodeModal() {
+            document.getElementById('passcodeModal').classList.add('show');
+            document.getElementById('oldPasscodeInput').value = '';
+            document.getElementById('newPasscodeInput').value = '';
+            document.getElementById('confirmPasscodeInput').value = '';
+            document.getElementById('modalError').textContent = '';
+            document.getElementById('oldPasscodeInput').focus();
+        }
+
+        function hidePasscodeModal() {
+            document.getElementById('passcodeModal').classList.remove('show');
+        }
+
+        function savePasscode() {
+            const oldCode = document.getElementById('oldPasscodeInput').value;
+            const newCode = document.getElementById('newPasscodeInput').value;
+            const confirmCode = document.getElementById('confirmPasscodeInput').value;
+            const errorElement = document.getElementById('modalError');
+            
+            // Check if old passcode is correct
+            if (oldCode !== passcode) {
+                errorElement.textContent = '❌ Current passcode is incorrect';
+                document.getElementById('oldPasscodeInput').value = '';
+                document.getElementById('oldPasscodeInput').focus();
+                return;
+            }
+            
+            // Check if new passcode is long enough
+            if (newCode.length < 4) {
+                errorElement.textContent = '❌ New passcode must be at least 4 digits';
+                document.getElementById('newPasscodeInput').focus();
+                return;
+            }
+            
+            // Check if new passcodes match
+            if (newCode !== confirmCode) {
+                errorElement.textContent = '❌ New passcodes do not match';
+                document.getElementById('confirmPasscodeInput').value = '';
+                document.getElementById('confirmPasscodeInput').focus();
+                return;
+            }
+            
+            // Check if new passcode is same as old
+            if (newCode === oldCode) {
+                errorElement.textContent = '❌ New passcode must be different';
+                document.getElementById('newPasscodeInput').value = '';
+                document.getElementById('confirmPasscodeInput').value = '';
+                document.getElementById('newPasscodeInput').focus();
+                return;
+            }
+            
+            // All checks passed - save new passcode
+            passcode = newCode;
+            localStorage.setItem('alarmPasscode', passcode);
+            hidePasscodeModal();
+            document.getElementById('status').textContent = '✓ Passcode updated successfully!';
+        }
+
+        // Prevent closing when alarm is playing
+        window.onbeforeunload = function() {
+            if (alarmPlaying) {
+                return "Alarm is still ringing! Are you sure you want to leave?";
+            }
+        };
+
+        // Start the app
+        init();
+    </script>
+</body>
+</html>
