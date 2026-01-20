@@ -48,12 +48,14 @@ My first idea was to make an app that can play her favorite music, and can be co
 <img src="alarm_ver.4_demo.png" width="300">   
 
 5. I added background changing function to add a little joy to waking up: [Alarm fourth draft](https://kottya.github.io/projects/alarm/ver4)
+
 <img src="alarm_ver.fin.png " width="300">
 <img src="alarm_ver.fin_demo.png" width="300">
 
 
 
 6. I changed the plaement of buttons so it won't interfere with the background step: [Alarm final draft](https://kottya.github.io/projects/alarm/)
+
 <img src="alarm_finfin.png " width="300">
 
 -------------
