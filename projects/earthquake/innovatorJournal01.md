@@ -11,7 +11,7 @@ I decided to choose earthquake as a theme for my new project. I have been intere
 
 My first focus in this project will be on architecture related technology.
 
-### Case Study 1 Five-story pagoda/五重塔
+### Case Study 1: Five-story pagoda/五重塔
 
 Source: “Five-Story Pagodas: Why Can’t Earthquakes Knock Them Down?” Web-Japan.org, web-japan.org/nipponia/nipponia33/en/topic/.
 
@@ -25,3 +25,8 @@ It has a unique structure that makes it earthquake proof, which helped them surv
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/22ef1f5e-286a-4f9a-8d15-d447fa59a553" />
 
 http://noukakuken.jp/lecture/lec1603.html
+
+When earthquake hits, each floor shakes independently, and its central pillar shakes the opposite way from its floor. This balancing out the center of gravity, which is the reason why there are only two reported disintegration of five-story pillars in the last 1400 years. This structure was used as reference for the design of Tokyo Skytree. It is also made of wood material, which bends and absorbs the impact. 
+
+
+### Case Study 2: 
