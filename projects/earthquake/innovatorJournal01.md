@@ -27,6 +27,18 @@ It has a unique structure that makes it earthquake proof, which helped them surv
 http://noukakuken.jp/lecture/lec1603.html
 
 When earthquake hits, each floor shakes independently, and its central pillar shakes the opposite way from its floor. This balancing out the center of gravity, which is the reason why there are only two reported disintegration of five-story pillars in the last 1400 years. This structure was used as reference for the design of Tokyo Skytree. It is also made of wood material, which bends and absorbs the impact. 
+ 
+
+### My plan
+
+My plan right now is to build a shaking board and test different stuctures.
 
 
-### Case Study 2: 
+Resources I need:
+
+For shaking board:
+- Stepping motors
+- CAD model & 3D printer
+- Arduino
+- breadboard & wires
+  
