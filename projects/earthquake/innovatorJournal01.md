@@ -11,7 +11,17 @@ I decided to choose earthquake as a theme for my new project. I have been intere
 
 My first focus in this project will be on architecture related technology.
 
-### Case Study 1 Five-stories pagoda/五重塔
+### Case Study 1 Five-story pagoda/五重塔
 
+Source: “Five-Story Pagodas: Why Can’t Earthquakes Knock Them Down?” Web-Japan.org, web-japan.org/nipponia/nipponia33/en/topic/.
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/98647906-4e6b-4e84-876c-716ee18d6cf4" />
 
+https://tabizine.jp/article/637230/
+
+Five-story pagoda is Japanese traditional buddhist architecture. Each story represents one element from the following list (from the bottom story to the top): Earth, water, fire, wind, and space.
+It has a unique structure that makes it earthquake proof, which helped them survive through one of the biggest earthquakes in Japanese history. The following us the diagram of its unique structure: 
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/22ef1f5e-286a-4f9a-8d15-d447fa59a553" />
+
+http://noukakuken.jp/lecture/lec1603.html
