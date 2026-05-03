@@ -8,4 +8,4 @@ Overview of the project [CAD vs. 3D design](projects/3d_modeling)
 
 My [Innovator Journal](projects/innovatorJournal)
 
-My [alarm project](projects/alarm)
+My [alarm project](projects/alarm) and the [process](projects/alarmClockProject)
