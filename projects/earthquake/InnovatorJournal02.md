@@ -44,5 +44,18 @@ Because of its unsymmetrical shape, the shaking motion is inconsistent depending
 
 <video width="320" controls>
   <source src="rightplacement.mp4" type="video/mp4">
+</video>
+
 <video width="320" controls>
   <source src="wrongplacement.mp4" type="video/mp4">
+</video>
+
+---
+### Plan until the end of the year
+
+1. Finish building at least one structure and create a presentation before USC presentation day
+2. Revise with the USC students feedback after the presentation day.
+3. Finish building at least one example for basic, seismic resistant, damping, and base isolation
+4. Test each with different shake frequency etc.
+5. Analyse the result
+   
