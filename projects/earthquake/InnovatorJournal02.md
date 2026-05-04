@@ -32,4 +32,17 @@
 
 ### Arduino
 
+<img src="arduino4shakingtable.png" width="1000">
 
+- I explored and changed up the delay length, steps per direction, and delay between steps to recreate the most earthquake-like shake.
+
+---
+
+### Problem
+
+Because of its unsymmetrical shape, the shaking motion is inconsistent depending on where the screw starts (reference the video below). As a temporary solution, I decided to start it with the left top corner every try for consistency,
+
+<video width="320" controls>
+  <source src="rightplacement.mp4" type="video/mp4">
+<video width="320" controls>
+  <source src="wrongplacement.mp4" type="video/mp4">
