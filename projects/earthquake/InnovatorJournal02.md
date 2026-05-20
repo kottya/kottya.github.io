@@ -40,7 +40,7 @@
 
 ### Problem
 
-Because of its unsymmetrical shape, the shaking motion is inconsistent depending on where the screw starts (reference the video below). As a temporary solution, I decided to start it with the left top corner every try for consistency,
+Because of its unsymmetrical shape, the shaking motion is inconsistent depending on where the screw starts (reference the video below). As a temporary solution, I decided to start it with the left top corner every try for consistency.
 
 <video width="320" controls>
   <source src="rightplacement.mp4" type="video/mp4">
@@ -58,4 +58,7 @@ Because of its unsymmetrical shape, the shaking motion is inconsistent depending
 3. Finish building at least one example for basic, seismic resistant, damping, and base isolation
 4. Test each with different shake frequency etc.
 5. Analyse the result
+---
+### USC presentation
+
    
