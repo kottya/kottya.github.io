@@ -57,6 +57,8 @@ Because of its unsymmetrical shape, the shaking motion is inconsistent depending
 3. Finish building at least one example for earthwuake resistant, damping, and seismic isolation
 4. Test each with different shake frequency etc.
 5. Analyse the result
+
+   
 ---
 ### [USC presentation](Computer.pdf)
 --- 
