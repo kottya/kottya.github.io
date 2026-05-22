@@ -55,10 +55,20 @@ Because of its unsymmetrical shape, the shaking motion is inconsistent depending
 
 1. Finish building at least one structure and create a presentation before USC presentation day
 2. Revise with the USC students feedback after the presentation day.
-3. Finish building at least one example for basic, seismic resistant, damping, and base isolation
+3. Finish building at least one example for earthwuake resistant, damping, and seismic isolation
 4. Test each with different shake frequency etc.
 5. Analyse the result
 ---
-### USC presentation
+### [USC presentation](Computer.pdf)
+--- 
+### Finished structures
 
+using chopsticks as the base, I built the model for:
+- Earthquake resistent: Generally stronger structure. Simulated with crossbars
+- Damping: Dissipates kinetic energy using dampers. Simulated with mini shock absorbers
+- seismic isolation: Isolates the base so the vibration doesn't reach to the building. Simulated with a tray with round metal rods.
+--- 
+### Future Plans after Tech & Innovation Seminar
+
+I couldn't finish testing and analyzing the structure I made. If I had more time, I would've created a polished version with more advanced materials such as aclyrics. I'm planning to create a polished version and test/analyze its resistence in the furture.
    
