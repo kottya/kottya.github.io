@@ -1,5 +1,4 @@
-# Earthquake projects
-## Innovator Journal 02
+# Earthquake project
 
 ### Progress: (after Spring break)
 - I finished my last prototype of the shake table
